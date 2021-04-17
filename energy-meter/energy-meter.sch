@@ -3,7 +3,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 3
+Sheet 1 2
 Title ""
 Date ""
 Rev ""
@@ -13,30 +13,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Sheet
-S 4500 4850 1100 2250
-U 607B74C2
-F0 "Modified LCR Meter" 50
-F1 "lcr.sch" 50
-F2 "SCL_5V" I L 4500 4950 50 
-F3 "SDA_5V" I L 4500 5050 50 
-F4 "TEMP2" I L 4500 5850 50 
-F5 "OP2_OUT_F" I L 4500 6050 50 
-F6 "OP1_OUT_F" I L 4500 5950 50 
-F7 "TEMP1" I L 4500 5750 50 
-F8 "VDDA" I R 5600 4950 50 
-F9 "DAC0" I L 4500 5550 50 
-F10 "DAC1" I L 4500 5650 50 
-F11 "OUT1_to_MCU" I L 4500 6150 50 
-F12 "SCL" I L 4500 5150 50 
-F13 "SDA" I L 4500 5250 50 
-F14 "U10B_10k" I L 4500 6250 50 
-F15 "OUT01_SHORT" I L 4500 6350 50 
-F16 "CURRENT1" I R 5600 5600 50 
-F17 "CURRENT0" I R 5600 5500 50 
-F18 "VOLTAGE1" I R 5600 5400 50 
-F19 "VOLTAGE0" I R 5600 5300 50 
-$EndSheet
 $Comp
 L glowstone:GD32VF103 U9
 U 1 1 607EAC44
@@ -71,44 +47,22 @@ Wire Wire Line
 	1400 1900 1000 1900
 Text Label 1000 1750 0    50   ~ 0
 DAC0
-Text Label 1000 1900 0    50   ~ 0
-DAC1
 Text Label 1150 3000 0    50   ~ 0
 SCL
 Text Label 1150 3150 0    50   ~ 0
 SDA
 Text Label 1000 1600 0    50   ~ 0
 TEMP1
-Text Label 1000 1300 0    50   ~ 0
-TEMP2
 Text Label 950  1450 0    50   ~ 0
 OP1_OUT_F
-Text Label 950  1150 0    50   ~ 0
-OP2_OUT_F
 Wire Wire Line
 	1150 3150 1400 3150
 Wire Wire Line
 	1400 3000 1150 3000
 Wire Wire Line
-	1000 1300 1400 1300
-Wire Wire Line
-	950  1150 1400 1150
-Wire Wire Line
 	1000 1600 1400 1600
 Wire Wire Line
 	1400 1450 950  1450
-Text Label 850  2050 0    50   ~ 0
-OUT1_to_MCU
-Text Label 850  6300 0    50   ~ 0
-OUT01_SHORT
-Text Label 850  5700 0    50   ~ 0
-U10B_10k
-Wire Wire Line
-	850  2050 1400 2050
-Wire Wire Line
-	850  6300 1400 6300
-Wire Wire Line
-	850  5700 1400 5700
 Text Notes 1850 1850 3    50   ~ 0
 ADC
 Wire Notes Line
@@ -188,50 +142,22 @@ Wire Wire Line
 	2250 6550 2500 6550
 Text Label 2300 6550 0    50   ~ 0
 5V
-Wire Wire Line
-	4500 5550 4100 5550
-Wire Wire Line
-	4500 5650 4100 5650
-Text Label 4100 5550 0    50   ~ 0
-DAC0
-Text Label 4100 5650 0    50   ~ 0
-DAC1
 Text Label 4250 5150 0    50   ~ 0
 SCL
 Text Label 4250 5250 0    50   ~ 0
 SDA
 Text Label 4100 5750 0    50   ~ 0
 TEMP1
-Text Label 4100 5850 0    50   ~ 0
-TEMP2
 Text Label 4050 5950 0    50   ~ 0
 OP1_OUT_F
-Text Label 4050 6050 0    50   ~ 0
-OP2_OUT_F
 Wire Wire Line
 	4250 5250 4500 5250
 Wire Wire Line
 	4500 5150 4250 5150
 Wire Wire Line
-	4100 5850 4500 5850
-Wire Wire Line
-	4050 6050 4500 6050
-Wire Wire Line
 	4100 5750 4500 5750
 Wire Wire Line
 	4500 5950 4050 5950
-Text Label 3950 6150 0    50   ~ 0
-OUT1_to_MCU
-Wire Wire Line
-	3950 6150 4500 6150
-Text Label 3950 6350 0    50   ~ 0
-OUT01_SHORT
-Text Label 3950 6250 0    50   ~ 0
-U10B_10k
-Wire Wire Line
-	3950 6350 4500 6350
-Wire Wire Line
-	3950 6250 4500 6250
 $Comp
 L energy-meter:G5RL-U1A-E K1
 U 1 1 608BFE77
@@ -372,9 +298,7 @@ N
 Wire Wire Line
 	7600 3700 8300 3700
 Wire Wire Line
-	7600 3100 8300 3100
-Wire Wire Line
-	7900 2950 8300 2950
+	7600 3100 8400 3100
 Text Label 6050 5300 2    50   ~ 0
 VOLTAGE0
 Text Label 6050 5400 2    50   ~ 0
@@ -391,14 +315,250 @@ Wire Wire Line
 	6050 5500 5600 5500
 Wire Wire Line
 	6050 5600 5600 5600
-Text Label 8300 2550 2    50   ~ 0
+Text Label 8250 2550 0    50   ~ 0
 VOLTAGE0
 Text Label 8300 2950 2    50   ~ 0
 VOLTAGE1
-Text Label 8300 3100 2    50   ~ 0
-CURRENT0
 Text Label 8300 3700 2    50   ~ 0
+CURRENT0
+Text Label 8300 3100 2    50   ~ 0
 CURRENT1
 Wire Wire Line
-	7900 2550 8300 2550
+	7900 2550 7950 2550
+Text Notes 8650 2400 0    50   ~ 0
+6V AC -> 8.5V p-p\n-> divide by 1/6
+$Comp
+L Device:R R?
+U 1 1 60A38A5B
+P 9750 2950
+AR Path="/602A3FC4/60A38A5B" Ref="R?"  Part="1" 
+AR Path="/60514CC5/60A38A5B" Ref="R?"  Part="1" 
+AR Path="/607B74C2/60A38A5B" Ref="R?"  Part="1" 
+AR Path="/60A38A5B" Ref="R4"  Part="1" 
+F 0 "R4" V 9543 2950 50  0000 C CNN
+F 1 "1k, 0.1%" V 9634 2950 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 9680 2950 50  0001 C CNN
+F 3 "~" H 9750 2950 50  0001 C CNN
+	1    9750 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 60A38A61
+P 9950 2950
+AR Path="/602A2F7F/60A38A61" Ref="C?"  Part="1" 
+AR Path="/602A3FC4/60A38A61" Ref="C?"  Part="1" 
+AR Path="/60514CC5/60A38A61" Ref="C?"  Part="1" 
+AR Path="/607B74C2/60A38A61" Ref="C?"  Part="1" 
+AR Path="/60A38A61" Ref="C2"  Part="1" 
+F 0 "C2" H 10065 2996 50  0000 L CNN
+F 1 "100n" H 10065 2905 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9988 2800 50  0001 C CNN
+F 3 "~" H 9950 2950 50  0001 C CNN
+	1    9950 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 60A3967A
+P 9750 2350
+AR Path="/607B74C2/60A3967A" Ref="#PWR?"  Part="1" 
+AR Path="/60A3967A" Ref="#PWR0106"  Part="1" 
+F 0 "#PWR0106" H 9750 2200 50  0001 C CNN
+F 1 "+3V3" V 9765 2478 50  0000 L CNN
+F 2 "" H 9750 2350 50  0001 C CNN
+F 3 "" H 9750 2350 50  0001 C CNN
+	1    9750 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60A3A4C3
+P 9750 2550
+AR Path="/602A3FC4/60A3A4C3" Ref="R?"  Part="1" 
+AR Path="/60514CC5/60A3A4C3" Ref="R?"  Part="1" 
+AR Path="/607B74C2/60A3A4C3" Ref="R?"  Part="1" 
+AR Path="/60A3A4C3" Ref="R3"  Part="1" 
+F 0 "R3" V 9543 2550 50  0000 C CNN
+F 1 "1k, 0.1%" V 9634 2550 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 9680 2550 50  0001 C CNN
+F 3 "~" H 9750 2550 50  0001 C CNN
+	1    9750 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9950 3100 9950 3150
+Wire Wire Line
+	9950 3150 9850 3150
+Wire Wire Line
+	9850 3150 9850 3200
+Wire Wire Line
+	9850 3150 9750 3150
+Wire Wire Line
+	9750 3150 9750 3100
+Connection ~ 9850 3150
+Wire Wire Line
+	9750 2800 9750 2750
+Wire Wire Line
+	9750 2750 9950 2750
+Wire Wire Line
+	9950 2750 9950 2800
+Connection ~ 9750 2750
+Wire Wire Line
+	9750 2750 9750 2700
+Wire Wire Line
+	9750 2400 9750 2350
+$Comp
+L power:GND #PWR0107
+U 1 1 60A40FDE
+P 9850 3200
+F 0 "#PWR0107" H 9850 2950 50  0001 C CNN
+F 1 "GND" V 9855 3072 50  0000 R CNN
+F 2 "" H 9850 3200 50  0001 C CNN
+F 3 "" H 9850 3200 50  0001 C CNN
+	1    9850 3200
+	1    0    0    -1  
+$EndComp
+Text Label 9950 2750 0    50   ~ 0
+BIAS
+$Comp
+L Device:R R?
+U 1 1 60A41CC6
+P 8100 2550
+AR Path="/602A3FC4/60A41CC6" Ref="R?"  Part="1" 
+AR Path="/60514CC5/60A41CC6" Ref="R?"  Part="1" 
+AR Path="/607B74C2/60A41CC6" Ref="R?"  Part="1" 
+AR Path="/60A41CC6" Ref="R1"  Part="1" 
+F 0 "R1" V 7893 2550 50  0000 C CNN
+F 1 "5k, 0.1%" V 7984 2550 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 8030 2550 50  0001 C CNN
+F 3 "~" H 8100 2550 50  0001 C CNN
+	1    8100 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60A42394
+P 8650 2750
+AR Path="/602A3FC4/60A42394" Ref="R?"  Part="1" 
+AR Path="/60514CC5/60A42394" Ref="R?"  Part="1" 
+AR Path="/607B74C2/60A42394" Ref="R?"  Part="1" 
+AR Path="/60A42394" Ref="R2"  Part="1" 
+F 0 "R2" V 8443 2750 50  0000 C CNN
+F 1 "1k, 0.1%" V 8534 2750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 8580 2750 50  0001 C CNN
+F 3 "~" H 8650 2750 50  0001 C CNN
+	1    8650 2750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8650 2950 8650 2900
+Wire Wire Line
+	7900 2950 8400 2950
+Wire Wire Line
+	8650 2600 8650 2550
+Wire Wire Line
+	8650 2550 8250 2550
+Connection ~ 8650 2550
+$Comp
+L Device:C C?
+U 1 1 60A48B22
+P 9000 2750
+AR Path="/602A2F7F/60A48B22" Ref="C?"  Part="1" 
+AR Path="/602A3FC4/60A48B22" Ref="C?"  Part="1" 
+AR Path="/60514CC5/60A48B22" Ref="C?"  Part="1" 
+AR Path="/607B74C2/60A48B22" Ref="C?"  Part="1" 
+AR Path="/60A48B22" Ref="C1"  Part="1" 
+F 0 "C1" H 9115 2796 50  0000 L CNN
+F 1 "100n" H 9115 2705 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9038 2600 50  0001 C CNN
+F 3 "~" H 9000 2750 50  0001 C CNN
+	1    9000 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8650 2950 9000 2950
+Wire Wire Line
+	9000 2950 9000 2900
+Connection ~ 8650 2950
+Wire Wire Line
+	9000 2600 9000 2550
+Wire Wire Line
+	8650 2550 9000 2550
+Text Label 1000 2550 0    50   ~ 0
+VOLTAGE0
+Text Label 1000 2700 0    50   ~ 0
+VOLTAGE1
+Wire Wire Line
+	1000 2700 1400 2700
+Wire Wire Line
+	1400 2550 1000 2550
+$Comp
+L power:+3V3 #PWR?
+U 1 1 60A51933
+P 5700 4950
+AR Path="/607B74C2/60A51933" Ref="#PWR?"  Part="1" 
+AR Path="/60A51933" Ref="#PWR0108"  Part="1" 
+F 0 "#PWR0108" H 5700 4800 50  0001 C CNN
+F 1 "+3V3" V 5715 5078 50  0000 L CNN
+F 2 "" H 5700 4950 50  0001 C CNN
+F 3 "" H 5700 4950 50  0001 C CNN
+	1    5700 4950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5600 4950 5700 4950
+$Comp
+L Device:Net-Tie_2 NT2
+U 1 1 60A60821
+P 8500 3100
+F 0 "NT2" H 8500 3050 50  0000 C CNN
+F 1 "Net-Tie_2" H 8500 3190 50  0001 C CNN
+F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 8500 3100 50  0001 C CNN
+F 3 "~" H 8500 3100 50  0001 C CNN
+	1    8500 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Net-Tie_2 NT1
+U 1 1 60A62054
+P 8500 3050
+F 0 "NT1" H 8500 3000 50  0000 C CNN
+F 1 "Net-Tie_2" H 8500 3140 50  0001 C CNN
+F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 8500 3050 50  0001 C CNN
+F 3 "~" H 8500 3050 50  0001 C CNN
+	1    8500 3050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8400 3050 8400 2950
+Connection ~ 8400 2950
+Wire Wire Line
+	8400 2950 8650 2950
+Text Label 8700 3100 0    50   ~ 0
+BIAS
+Wire Wire Line
+	8700 3100 8600 3100
+Wire Wire Line
+	8600 3050 8600 3100
+Connection ~ 8600 3100
+$Sheet
+S 4500 4850 1100 2250
+U 607B74C2
+F0 "Modified LCR Meter" 50
+F1 "lcr.sch" 50
+F2 "SCL_5V" I L 4500 4950 50 
+F3 "SDA_5V" I L 4500 5050 50 
+F4 "OP1_OUT_F" I L 4500 5950 50 
+F5 "TEMP1" I L 4500 5750 50 
+F6 "VDDA" I R 5600 4950 50 
+F7 "SCL" I L 4500 5150 50 
+F8 "SDA" I L 4500 5250 50 
+F9 "CURRENT1" I R 5600 5600 50 
+F10 "CURRENT0" I R 5600 5500 50 
+F11 "VOLTAGE1" I R 5600 5400 50 
+F12 "VOLTAGE0" I R 5600 5300 50 
+$EndSheet
+Text Label 1000 1900 0    50   ~ 0
+DAC1
 $EndSCHEMATC

@@ -1,0 +1,6 @@
+*.bak
+*-cache.*
+*-info-cache
+.*.swp
+*.kicad_pcb-bak
+*.bck

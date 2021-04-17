@@ -1,0 +1,21 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP AP-2500
+D Current Transformer, 1:2500
+K current sense transformer
+F https://www.coilcraft.com/pdfs/cst.pdf
+$ENDCMP
+#
+$CMP BV202
+D Transformer, single primary, single secondary
+K transformer coil magnet
+F https://www.tme.eu/Document/412ff82a0d9ae839d6b24853d8f56596/Hahn-E.pdf
+$ENDCMP
+#
+$CMP G5RL-U1A-E
+D Omron G5RL-U1A-E, bistable
+K Single Pole Relay SPST-NO
+F https://www.tme.eu/Document/97f831b60f5e717b4e81dbfb5073c077/en-g5rl_uk.pdf
+$ENDCMP
+#
+#End Doc Library

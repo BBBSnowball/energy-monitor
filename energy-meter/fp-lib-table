@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name energy-meter)(type KiCad)(uri ${KIPRJMOD}/energy-meter.pretty)(options "")(descr ""))
+)

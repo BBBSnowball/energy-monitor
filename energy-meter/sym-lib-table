@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name energy-meter)(type Legacy)(uri ${KIPRJMOD}/energy-meter.lib)(options "")(descr ""))
+  (lib (name glowstone)(type Legacy)(uri ${KIPRJMOD}/../../glowstone/pcb/lib/glowstone.lib)(options "")(descr ""))
+)

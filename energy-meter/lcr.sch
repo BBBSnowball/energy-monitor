@@ -1778,5 +1778,22 @@ CURR0
 Text Label 10300 5900 0    50   ~ 0
 CURR1
 Text Notes 12250 4400 0    50   ~ 0
-FIXME:\n- connect input of OpAmps to analog switch to calibrate offset?\n  (probably not required for AC)\n- don't use Kelvin measurement for resistors\n  -> frees up some analog switches\n- get rid of U10, which is hardly used anymore\n- OUT1=CURR0\n- OUT0B=CURR1\n- VDDA can be 3.3V, I think
+FIXME:\n- connect input of OpAmps to analog switch to calibrate offset?\n  (probably not required for AC)\n- don't use Kelvin measurement for resistors\n  -> frees up some analog switches\n- get rid of U10, which is hardly used anymore\n- OUT1=CURR0\n- OUT0B=CURR1\n- VDDA can be 3.3V, I think\n- bias one side of OpAmp to VCC/2
+Wire Wire Line
+	10800 2750 10800 2650
+Wire Wire Line
+	10800 2650 10650 2650
+Connection ~ 10800 2750
+Wire Wire Line
+	10550 3100 10550 3000
+Wire Wire Line
+	10550 3000 10400 3000
+Connection ~ 10400 3000
+Wire Wire Line
+	9750 3550 9750 3300
+Wire Wire Line
+	9750 3300 9900 3300
+Connection ~ 9900 3300
+Text Notes 11850 5800 0    50   ~ 0
+6V AC -> 8.5V p-p\n
 $EndSCHEMATC

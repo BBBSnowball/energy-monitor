@@ -577,21 +577,6 @@ Text Label 7400 1400 2    50   ~ 0
 OP1_OUT_F
 Wire Wire Line
 	10100 2600 10100 3350
-$Comp
-L Device:Q_NMOS_GSD Q?
-U 1 1 6091EE3A
-P 12650 2100
-AR Path="/60846F2E/6091EE3A" Ref="Q?"  Part="1" 
-AR Path="/60514CC5/6091EE3A" Ref="Q11"  Part="1" 
-AR Path="/607B74C2/6091EE3A" Ref="Q11"  Part="1" 
-F 0 "Q11" H 12856 2146 50  0000 L CNN
-F 1 "AP3400" H 12856 2055 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 12850 2200 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1901071504_ShenZhen-Quan-Li-Semiconductor-AP3400_C353070.pdf" H 12650 2100 50  0001 C CNN
-F 4 "AP3400, C353070, HSS2306A, C518790, AO3400A, C700953" H 12650 2100 50  0001 C CNN "LCSC"
-	1    12650 2100
-	0    1    1    0   
-$EndComp
 Text HLabel 2500 4850 0    50   Input ~ 0
 SDA
 Text HLabel 2500 4750 0    50   Input ~ 0

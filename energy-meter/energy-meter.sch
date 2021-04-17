@@ -216,9 +216,9 @@ F 3 "" H 5300 4150 50  0001 C CNN
 	1    5300 4150
 	0    -1   -1   0   
 $EndComp
-Text Notes 5600 4250 0    50   ~ 0
+Text Notes 5400 4250 0    50   ~ 0
 IO3, SDA, RX1
-Text Notes 4500 4250 2    50   ~ 0
+Text Notes 4800 4250 2    50   ~ 0
 IO4, SCL, TX1
 $Comp
 L power:+3V3 #PWR?
@@ -920,7 +920,7 @@ F 1 "Conn_01x03" H 10980 6101 50  0001 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Horizontal" H 10900 6200 50  0001 C CNN
 F 3 "~" H 10900 6200 50  0001 C CNN
 	1    10900 6200
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L power:+6V #PWR0127
@@ -1050,4 +1050,83 @@ F 3 "" H 9350 3650 50  0001 C CNN
 $EndComp
 Text Label 9350 3350 2    50   ~ 0
 CURRENT0
+Text Label 3850 4250 0    50   ~ 0
+SCL
+Wire Wire Line
+	4300 4250 4800 4250
+$Comp
+L Jumper:SolderJumper_2_Open JP4
+U 1 1 60C77BF5
+P 4150 4250
+F 0 "JP4" H 4150 4117 50  0000 C CNN
+F 1 "SolderJumper_2_Open" H 4150 4364 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 4150 4250 50  0001 C CNN
+F 3 "~" H 4150 4250 50  0001 C CNN
+	1    4150 4250
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3850 4250 4000 4250
+Wire Wire Line
+	5300 4250 6050 4250
+$Comp
+L Jumper:SolderJumper_2_Open JP5
+U 1 1 60C8116D
+P 6200 4250
+F 0 "JP5" H 6200 4117 50  0000 C CNN
+F 1 "SolderJumper_2_Open" H 6200 4364 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 6200 4250 50  0001 C CNN
+F 3 "~" H 6200 4250 50  0001 C CNN
+	1    6200 4250
+	-1   0    0    1   
+$EndComp
+Text Label 6550 4250 2    50   ~ 0
+SDA
+Wire Wire Line
+	6550 4250 6350 4250
+$Comp
+L Connector_Generic:Conn_01x04 J3
+U 1 1 60C9802A
+P 5050 3550
+F 0 "J3" H 5130 3542 50  0000 L CNN
+F 1 "I2C OLED Display, etc." H 5130 3451 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Horizontal" H 5050 3550 50  0001 C CNN
+F 3 "~" H 5050 3550 50  0001 C CNN
+	1    5050 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0136
+U 1 1 60C999E8
+P 4650 3450
+F 0 "#PWR0136" H 4650 3200 50  0001 C CNN
+F 1 "GND" V 4655 3322 50  0000 R CNN
+F 2 "" H 4650 3450 50  0001 C CNN
+F 3 "" H 4650 3450 50  0001 C CNN
+	1    4650 3450
+	0    1    1    0   
+$EndComp
+Text Label 4650 3550 0    50   ~ 0
+SCL
+Wire Wire Line
+	4650 3550 4850 3550
+Text Label 4650 3650 0    50   ~ 0
+SDA
+Wire Wire Line
+	4650 3650 4850 3650
+$Comp
+L power:+3V3 #PWR?
+U 1 1 60CA251B
+P 4850 3750
+AR Path="/607B74C2/60CA251B" Ref="#PWR?"  Part="1" 
+AR Path="/60CA251B" Ref="#PWR0137"  Part="1" 
+F 0 "#PWR0137" H 4850 3600 50  0001 C CNN
+F 1 "+3V3" V 4865 3878 50  0000 L CNN
+F 2 "" H 4850 3750 50  0001 C CNN
+F 3 "" H 4850 3750 50  0001 C CNN
+	1    4850 3750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4650 3450 4850 3450
 $EndSCHEMATC

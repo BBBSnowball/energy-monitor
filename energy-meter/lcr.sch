@@ -130,17 +130,6 @@ F 3 "" H 3900 5950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:VDDA #PWR0119
-U 1 1 605C4057
-P 3900 5650
-F 0 "#PWR0119" H 3900 5500 50  0001 C CNN
-F 1 "VDDA" H 3917 5823 50  0000 C CNN
-F 2 "" H 3900 5650 50  0001 C CNN
-F 3 "" H 3900 5650 50  0001 C CNN
-	1    3900 5650
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:Ferrite_Bead_Small FB2
 U 1 1 605C4062
 P 3350 4200
@@ -458,7 +447,7 @@ CURR0
 Text Label 8600 3350 0    50   ~ 0
 CURR1
 Text Notes 12250 4400 0    50   ~ 0
-FIXME:\n- connect inputs of OpAmp to MCU so it can short them for calibration\n- use resistor dividers to generate reference voltages for calibration,\n  VCC side connected to MCU to turn them off\n\n- normal gain should be 4\n- gain 4000 and 4M would be good to have\n\n- add some LEDs for GD32V\n\n- relay\n\n- add optional DC/DC for 3V3 from T2\n\n- remove LC filter and replace by one that is before the opamp?
+FIXME:\n- connect inputs of OpAmp to MCU so it can short them for calibration\n- use resistor dividers to generate reference voltages for calibration,\n  VCC side connected to MCU to turn them off\n\n- normal gain should be 4\n- gain 4000 and 4M would be good to have\n\n- remove LC filter and replace by one that is before the opamp?
 Text Label 4600 4850 2    50   ~ 0
 CURR1
 Text Label 4600 5050 2    50   ~ 0
@@ -692,5 +681,16 @@ F 2 "" H 3750 4250 50  0001 C CNN
 F 3 "" H 3750 4250 50  0001 C CNN
 	1    3750 4250
 	0    1    1    0   
+$EndComp
+$Comp
+L power:+3V3 #PWR0119
+U 1 1 60CCAFAF
+P 3900 5650
+F 0 "#PWR0119" H 3900 5500 50  0001 C CNN
+F 1 "+3V3" H 3915 5823 50  0000 C CNN
+F 2 "" H 3900 5650 50  0001 C CNN
+F 3 "" H 3900 5650 50  0001 C CNN
+	1    3900 5650
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

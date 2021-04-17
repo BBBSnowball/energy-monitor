@@ -175,7 +175,7 @@ L Connector:Screw_Terminal_01x04 J1
 U 1 1 608C1475
 P 7750 900
 F 0 "J1" H 7830 892 50  0000 L CNN
-F 1 "Screw_Terminal_01x04" H 7830 801 50  0000 L CNN
+F 1 "Screw_Terminal_01x04" H 7830 801 50  0001 L CNN
 F 2 "energy-meter:DG35C-B-04P-13-200AH" H 7750 900 50  0001 C CNN
 F 3 "~" H 7750 900 50  0001 C CNN
 F 4 "https://www.tme.eu/de/details/dg35c-b-04p/klemmleisten-fur-pcb/degson-electronics/dg35c-b-04p-13-200ah/" H 7750 900 50  0001 C CNN "TME"
@@ -245,7 +245,7 @@ $Comp
 L energy-meter:BV202 T2
 U 1 1 60929B00
 P 7500 2750
-F 0 "T2" H 7500 3131 50  0000 C CNN
+F 0 "T2" H 7300 2750 50  0000 C CNN
 F 1 "BV 202 0154" H 7500 3040 50  0000 C CNN
 F 2 "energy-meter:BV202" H 7500 2750 50  0001 C CNN
 F 3 "https://www.tme.eu/Document/412ff82a0d9ae839d6b24853d8f56596/Hahn-E.pdf" H 7500 2750 50  0001 C CNN
@@ -307,7 +307,7 @@ Wire Wire Line
 	6050 5500 5600 5500
 Wire Wire Line
 	6050 5600 5600 5600
-Text Label 8700 2550 0    50   ~ 0
+Text Label 9050 2550 0    50   ~ 0
 VOLTAGE0
 Text Label 8300 2950 2    50   ~ 0
 VOLTAGE1
@@ -322,96 +322,96 @@ Text Notes 8650 2400 0    50   ~ 0
 $Comp
 L Device:R R?
 U 1 1 60A38A5B
-P 10300 3000
+P 10500 3300
 AR Path="/602A3FC4/60A38A5B" Ref="R?"  Part="1" 
 AR Path="/60514CC5/60A38A5B" Ref="R?"  Part="1" 
 AR Path="/607B74C2/60A38A5B" Ref="R?"  Part="1" 
 AR Path="/60A38A5B" Ref="R4"  Part="1" 
-F 0 "R4" V 10093 3000 50  0000 C CNN
-F 1 "1k, 0.1%" V 10184 3000 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 10230 3000 50  0001 C CNN
-F 3 "~" H 10300 3000 50  0001 C CNN
-	1    10300 3000
+F 0 "R4" V 10293 3300 50  0000 C CNN
+F 1 "1k, 0.1%" V 10384 3300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 10430 3300 50  0001 C CNN
+F 3 "~" H 10500 3300 50  0001 C CNN
+	1    10500 3300
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C?
 U 1 1 60A38A61
-P 10500 3000
+P 10700 3300
 AR Path="/602A2F7F/60A38A61" Ref="C?"  Part="1" 
 AR Path="/602A3FC4/60A38A61" Ref="C?"  Part="1" 
 AR Path="/60514CC5/60A38A61" Ref="C?"  Part="1" 
 AR Path="/607B74C2/60A38A61" Ref="C?"  Part="1" 
 AR Path="/60A38A61" Ref="C2"  Part="1" 
-F 0 "C2" H 10615 3046 50  0000 L CNN
-F 1 "100n" H 10615 2955 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 10538 2850 50  0001 C CNN
-F 3 "~" H 10500 3000 50  0001 C CNN
-	1    10500 3000
+F 0 "C2" H 10815 3346 50  0000 L CNN
+F 1 "100n" H 10815 3255 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 10738 3150 50  0001 C CNN
+F 3 "~" H 10700 3300 50  0001 C CNN
+	1    10700 3300
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+3V3 #PWR?
 U 1 1 60A3967A
-P 10300 2400
+P 10500 2700
 AR Path="/607B74C2/60A3967A" Ref="#PWR?"  Part="1" 
 AR Path="/60A3967A" Ref="#PWR0106"  Part="1" 
-F 0 "#PWR0106" H 10300 2250 50  0001 C CNN
-F 1 "+3V3" V 10315 2528 50  0000 L CNN
-F 2 "" H 10300 2400 50  0001 C CNN
-F 3 "" H 10300 2400 50  0001 C CNN
-	1    10300 2400
+F 0 "#PWR0106" H 10500 2550 50  0001 C CNN
+F 1 "+3V3" V 10515 2828 50  0000 L CNN
+F 2 "" H 10500 2700 50  0001 C CNN
+F 3 "" H 10500 2700 50  0001 C CNN
+	1    10500 2700
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R?
 U 1 1 60A3A4C3
-P 10300 2600
+P 10500 2900
 AR Path="/602A3FC4/60A3A4C3" Ref="R?"  Part="1" 
 AR Path="/60514CC5/60A3A4C3" Ref="R?"  Part="1" 
 AR Path="/607B74C2/60A3A4C3" Ref="R?"  Part="1" 
 AR Path="/60A3A4C3" Ref="R3"  Part="1" 
-F 0 "R3" V 10093 2600 50  0000 C CNN
-F 1 "1k, 0.1%" V 10184 2600 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 10230 2600 50  0001 C CNN
-F 3 "~" H 10300 2600 50  0001 C CNN
-	1    10300 2600
+F 0 "R3" V 10293 2900 50  0000 C CNN
+F 1 "1k, 0.1%" V 10384 2900 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 10430 2900 50  0001 C CNN
+F 3 "~" H 10500 2900 50  0001 C CNN
+	1    10500 2900
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	10500 3150 10500 3200
+	10700 3450 10700 3500
 Wire Wire Line
-	10500 3200 10400 3200
+	10700 3500 10600 3500
 Wire Wire Line
-	10400 3200 10400 3250
+	10600 3500 10600 3550
 Wire Wire Line
-	10400 3200 10300 3200
+	10600 3500 10500 3500
 Wire Wire Line
-	10300 3200 10300 3150
-Connection ~ 10400 3200
+	10500 3500 10500 3450
+Connection ~ 10600 3500
 Wire Wire Line
-	10300 2850 10300 2800
+	10500 3150 10500 3100
 Wire Wire Line
-	10300 2800 10500 2800
+	10500 3100 10700 3100
 Wire Wire Line
-	10500 2800 10500 2850
-Connection ~ 10300 2800
+	10700 3100 10700 3150
+Connection ~ 10500 3100
 Wire Wire Line
-	10300 2800 10300 2750
+	10500 3100 10500 3050
 Wire Wire Line
-	10300 2450 10300 2400
+	10500 2750 10500 2700
 $Comp
 L power:GND #PWR0107
 U 1 1 60A40FDE
-P 10400 3250
-F 0 "#PWR0107" H 10400 3000 50  0001 C CNN
-F 1 "GND" V 10405 3122 50  0000 R CNN
-F 2 "" H 10400 3250 50  0001 C CNN
-F 3 "" H 10400 3250 50  0001 C CNN
-	1    10400 3250
+P 10600 3550
+F 0 "#PWR0107" H 10600 3300 50  0001 C CNN
+F 1 "GND" V 10605 3422 50  0000 R CNN
+F 2 "" H 10600 3550 50  0001 C CNN
+F 3 "" H 10600 3550 50  0001 C CNN
+	1    10600 3550
 	1    0    0    -1  
 $EndComp
-Text Label 10500 2800 0    50   ~ 0
+Text Label 10700 3100 0    50   ~ 0
 BIAS
 $Comp
 L Device:R R?
@@ -1133,8 +1133,8 @@ $Comp
 L Relay:DIPxx-1Axx-11x K2
 U 1 1 60CDDACF
 P 9700 1200
-F 0 "K2" H 10030 1246 50  0000 L CNN
-F 1 "DNP / HF3FF/005-1HST" H 10030 1155 50  0000 L CNN
+F 0 "K2" H 10050 1350 50  0000 L CNN
+F 1 "DNP / HF3FF/005-1HST" H 10050 1250 50  0000 L CNN
 F 2 "energy-meter:Relay_HF3FF_005" H 10050 1150 50  0001 L CNN
 F 3 "https://standexelectronics.com/wp-content/uploads/datasheet_reed_relay_DIP.pdf" H 9700 1200 50  0001 C CNN
 F 4 "https://www.tme.eu/de/details/hf3ff_005-1hst/elektromagnetische-mini-relais/hongfa-relay/" H 9700 1200 50  0001 C CNN "TME"
@@ -1147,7 +1147,7 @@ Wire Wire Line
 	9950 850  9900 850 
 Wire Wire Line
 	9900 850  9900 900 
-Text GLabel 10350 1550 2    50   Input ~ 0
+Text GLabel 10400 1550 2    50   Input ~ 0
 L_IN
 Wire Wire Line
 	9900 1550 9900 1500
@@ -1169,7 +1169,7 @@ Wire Wire Line
 	9100 850  9500 850 
 Wire Wire Line
 	9500 850  9500 900 
-Text Notes 10050 1700 0    50   ~ 0
+Text Notes 10350 1750 0    50   ~ 0
 connect with wire
 $Comp
 L energy-meter:AP-2500 T3
@@ -1190,19 +1190,104 @@ Wire Wire Line
 	7600 3700 7300 3700
 Connection ~ 7600 3700
 $Comp
-L Connector:TestPoint TP?
+L Connector:TestPoint TP1
 U 1 1 60D46B3F
-P 9900 1550
-F 0 "TP?" H 9950 1800 50  0000 R CNN
-F 1 "TestPoint" H 9958 1577 50  0001 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm" H 10100 1550 50  0001 C CNN
-F 3 "~" H 10100 1550 50  0001 C CNN
-	1    9900 1550
+P 10100 1550
+F 0 "TP1" H 10150 1800 50  0000 R CNN
+F 1 "TestPoint" H 10158 1577 50  0001 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm" H 10300 1550 50  0001 C CNN
+F 3 "~" H 10300 1550 50  0001 C CNN
+	1    10100 1550
 	-1   0    0    1   
 $EndComp
-Connection ~ 9900 1550
 Wire Wire Line
-	10350 1550 10200 1550
+	10400 1550 10250 1550
 Wire Wire Line
 	9900 1550 10100 1550
+$Comp
+L Connector:TestPoint TP2
+U 1 1 60D5530D
+P 10250 1550
+F 0 "TP2" H 10300 1800 50  0000 R CNN
+F 1 "TestPoint" H 10308 1577 50  0001 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm" H 10450 1550 50  0001 C CNN
+F 3 "~" H 10450 1550 50  0001 C CNN
+	1    10250 1550
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:TestPoint TP3
+U 1 1 60D6E7AC
+P 10750 750
+F 0 "TP3" H 10800 1000 50  0000 R CNN
+F 1 "TestPoint" H 10808 777 50  0001 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm" H 10950 750 50  0001 C CNN
+F 3 "~" H 10950 750 50  0001 C CNN
+	1    10750 750 
+	0    -1   -1   0   
+$EndComp
+Text Notes 8650 2050 0    50   ~ 0
+alternative use of the 2nd relay:\n- cut L_OUT around TP3\n- TP3 -> through T3 -> TP5\n- N -> TP4\n- L_OUT to external load, as usual\n=> K2 enables internal load
+$Comp
+L Connector:TestPoint TP4
+U 1 1 60D74A76
+P 10850 1400
+F 0 "TP4" H 10900 1650 50  0000 R CNN
+F 1 "TestPoint" H 10908 1427 50  0001 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm" H 11050 1400 50  0001 C CNN
+F 3 "~" H 11050 1400 50  0001 C CNN
+	1    10850 1400
+	0    1    1    0   
+$EndComp
+Wire Notes Line
+	8600 2100 11150 2100
+Wire Notes Line
+	11150 2100 11150 600 
+Wire Notes Line
+	11150 600  8600 600 
+Wire Notes Line
+	8600 600  8600 2100
+$Comp
+L Device:R R5
+U 1 1 60D8261D
+P 10500 1400
+F 0 "R5" V 10400 1300 50  0000 C CNN
+F 1 "39kOhm, 2W, 1%" V 10350 1700 50  0000 C CNN
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.52x3.35mm_HandSolder" V 10430 1400 50  0001 C CNN
+F 3 "~" H 10500 1400 50  0001 C CNN
+F 4 "https://www.tme.eu/de/details/sp12-39k-1%25/widerstande-smd-2512/royal-ohm/sp123wf3902t2e/" H 10500 1400 50  0001 C CNN "TME"
+	1    10500 1400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	10650 1400 10850 1400
+Wire Wire Line
+	10350 1400 10100 1400
+Wire Wire Line
+	10100 1400 10100 1550
+Connection ~ 10100 1550
+$Comp
+L Connector:TestPoint TP5
+U 1 1 60D9EED0
+P 10750 950
+F 0 "TP5" H 10800 1200 50  0000 R CNN
+F 1 "TestPoint" H 10808 977 50  0001 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm" H 10950 950 50  0001 C CNN
+F 3 "~" H 10950 950 50  0001 C CNN
+	1    10750 950 
+	0    -1   -1   0   
+$EndComp
+Text GLabel 10850 850  2    50   Input ~ 0
+L_OUT
+Wire Wire Line
+	10850 850  10800 850 
+Wire Wire Line
+	10800 850  10800 750 
+Wire Wire Line
+	10800 750  10750 750 
+Wire Wire Line
+	10800 850  10800 950 
+Wire Wire Line
+	10800 950  10750 950 
+Connection ~ 10800 850 
 $EndSCHEMATC

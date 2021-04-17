@@ -29,138 +29,6 @@ F 4 "C146565 (10R, 1/6W) !!!; [C319753, C319752 (0805), C319749 (0603)]" H 10100
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:R R?
-U 1 1 6058E278
-P 3600 6700
-AR Path="/602A3FC4/6058E278" Ref="R?"  Part="1" 
-AR Path="/60514CC5/6058E278" Ref="R54"  Part="1" 
-AR Path="/607B74C2/6058E278" Ref="R54"  Part="1" 
-F 0 "R54" V 3393 6700 50  0000 C CNN
-F 1 "10k" V 3484 6700 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3530 6700 50  0001 C CNN
-F 3 "~" H 3600 6700 50  0001 C CNN
-	1    3600 6700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 6058EFCC
-P 3900 6700
-AR Path="/602A3FC4/6058EFCC" Ref="R?"  Part="1" 
-AR Path="/60514CC5/6058EFCC" Ref="R55"  Part="1" 
-AR Path="/607B74C2/6058EFCC" Ref="R55"  Part="1" 
-F 0 "R55" V 3693 6700 50  0000 C CNN
-F 1 "10k" V 3784 6700 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3830 6700 50  0001 C CNN
-F 3 "~" H 3900 6700 50  0001 C CNN
-	1    3900 6700
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VDDA #PWR0112
-U 1 1 60593A2D
-P 3750 6450
-F 0 "#PWR0112" H 3750 6300 50  0001 C CNN
-F 1 "VDDA" H 3767 6623 50  0000 C CNN
-F 2 "" H 3750 6450 50  0001 C CNN
-F 3 "" H 3750 6450 50  0001 C CNN
-	1    3750 6450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3900 6550 3900 6500
-Wire Wire Line
-	3900 6500 3750 6500
-Wire Wire Line
-	3600 6500 3600 6550
-Connection ~ 3750 6500
-Wire Wire Line
-	3750 6500 3600 6500
-Wire Wire Line
-	3300 6900 3600 6900
-Wire Wire Line
-	3600 6900 3600 6850
-Connection ~ 3600 6900
-Wire Wire Line
-	3900 6850 3900 7300
-Wire Wire Line
-	3900 7300 3650 7300
-Connection ~ 3900 7300
-$Comp
-L Device:R R?
-U 1 1 6059A796
-P 2550 6700
-AR Path="/602A3FC4/6059A796" Ref="R?"  Part="1" 
-AR Path="/60514CC5/6059A796" Ref="R52"  Part="1" 
-AR Path="/607B74C2/6059A796" Ref="R52"  Part="1" 
-F 0 "R52" V 2343 6700 50  0000 C CNN
-F 1 "10k" V 2434 6700 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 2480 6700 50  0001 C CNN
-F 3 "~" H 2550 6700 50  0001 C CNN
-	1    2550 6700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R?
-U 1 1 6059AB3E
-P 2850 6700
-AR Path="/602A3FC4/6059AB3E" Ref="R?"  Part="1" 
-AR Path="/60514CC5/6059AB3E" Ref="R53"  Part="1" 
-AR Path="/607B74C2/6059AB3E" Ref="R53"  Part="1" 
-F 0 "R53" V 2643 6700 50  0000 C CNN
-F 1 "10k" V 2734 6700 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 2780 6700 50  0001 C CNN
-F 3 "~" H 2850 6700 50  0001 C CNN
-	1    2850 6700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2850 6850 2850 6900
-Wire Wire Line
-	2850 6900 2900 6900
-Wire Wire Line
-	2850 6900 2250 6900
-Connection ~ 2850 6900
-Wire Wire Line
-	2550 6850 2550 7300
-Wire Wire Line
-	2550 7300 3250 7300
-Wire Wire Line
-	2550 7300 2250 7300
-Connection ~ 2550 7300
-Text Label 4000 6900 0    50   ~ 0
-SCL_5V
-Text Label 4000 7300 0    50   ~ 0
-SDA_5V
-$Comp
-L power:+3V3 #PWR0113
-U 1 1 605A2730
-P 2700 6450
-F 0 "#PWR0113" H 2700 6300 50  0001 C CNN
-F 1 "+3V3" H 2715 6623 50  0000 C CNN
-F 2 "" H 2700 6450 50  0001 C CNN
-F 3 "" H 2700 6450 50  0001 C CNN
-	1    2700 6450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2850 6550 2850 6500
-Wire Wire Line
-	2850 6500 2700 6500
-Wire Wire Line
-	2550 6500 2550 6550
-Wire Wire Line
-	2700 6500 2700 6450
-Connection ~ 2700 6500
-Wire Wire Line
-	2700 6500 2550 6500
-Wire Wire Line
-	3750 6500 3750 6450
-Text Label 2450 6900 2    50   ~ 0
-SCL
-Text Label 2450 7300 2    50   ~ 0
-SDA
-$Comp
 L glowstone:SLG47004 U11
 U 3 1 605C3FF9
 P 3650 4800
@@ -171,25 +39,6 @@ F 3 "https://www.dialog-semiconductor.com/sites/default/files/slg47004_ds_2v2.pd
 	3    3650 4800
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:VDDA #PWR0114
-U 1 1 605C4003
-P 3750 4250
-F 0 "#PWR0114" H 3750 4100 50  0001 C CNN
-F 1 "VDDA" V 3767 4378 50  0000 L CNN
-F 2 "" H 3750 4250 50  0001 C CNN
-F 3 "" H 3750 4250 50  0001 C CNN
-	1    3750 4250
-	0    1    1    0   
-$EndComp
-Text Label 3050 4750 0    50   ~ 0
-SCL_5V
-Text Label 3050 4850 0    50   ~ 0
-SDA_5V
-Wire Wire Line
-	3050 4850 3350 4850
-Wire Wire Line
-	3050 4750 3350 4750
 $Comp
 L Device:C C?
 U 1 1 605C4011
@@ -303,17 +152,6 @@ F 4 "BLM15PX601SZ1D" H 3350 4200 50  0001 C CNN "MPN"
 	1    3350 4200
 	0    1    1    0   
 $EndComp
-$Comp
-L power:VDDA #PWR0120
-U 1 1 605C406C
-P 3250 4200
-F 0 "#PWR0120" H 3250 4050 50  0001 C CNN
-F 1 "VDDA" V 3268 4328 50  0000 L CNN
-F 2 "" H 3250 4200 50  0001 C CNN
-F 3 "" H 3250 4200 50  0001 C CNN
-	1    3250 4200
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	3550 4250 3550 4200
 Wire Wire Line
@@ -341,20 +179,6 @@ F 3 "https://www.dialog-semiconductor.com/sites/default/files/slg47004_ds_2v2.pd
 	1    6300 2850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3450 7000 3450 6800
-Wire Wire Line
-	3450 6800 3300 6800
-Wire Wire Line
-	3300 6800 3300 6500
-Wire Wire Line
-	3300 6500 3100 6500
-Connection ~ 2850 6500
-Wire Wire Line
-	3100 6600 3100 6500
-Connection ~ 3100 6500
-Wire Wire Line
-	3100 6500 2850 6500
 $Comp
 L glowstone:SLG47004 U11
 U 2 1 6062B968
@@ -611,163 +435,30 @@ F 4 "C309083, C319938, C188363" H 10400 3200 50  0001 C CNN "LCSC"
 $EndComp
 Wire Wire Line
 	10100 2600 10400 2600
-Text Label 10300 5600 0    50   ~ 0
-IN1
-Text Label 10300 5450 0    50   ~ 0
-IN0
 Wire Wire Line
-	10300 5900 10600 5900
+	8600 3350 8900 3350
 Wire Wire Line
-	10300 5450 10600 5450
-Wire Wire Line
-	10300 5600 10600 5600
-Wire Wire Line
-	10300 5750 10600 5750
-$Comp
-L Device:Q_NMOS_GSD Q?
-U 1 1 6091EE3A
-P 3450 7200
-AR Path="/60846F2E/6091EE3A" Ref="Q?"  Part="1" 
-AR Path="/60514CC5/6091EE3A" Ref="Q11"  Part="1" 
-AR Path="/607B74C2/6091EE3A" Ref="Q11"  Part="1" 
-F 0 "Q11" H 3656 7246 50  0000 L CNN
-F 1 "AP3400" H 3656 7155 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 3650 7300 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1901071504_ShenZhen-Quan-Li-Semiconductor-AP3400_C353070.pdf" H 3450 7200 50  0001 C CNN
-F 4 "AP3400, C353070, HSS2306A, C518790, AO3400A, C700953" H 3450 7200 50  0001 C CNN "LCSC"
-	1    3450 7200
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:Q_NMOS_GSD Q?
-U 1 1 6092C9B2
-P 3100 6800
-AR Path="/60846F2E/6092C9B2" Ref="Q?"  Part="1" 
-AR Path="/60514CC5/6092C9B2" Ref="Q10"  Part="1" 
-AR Path="/607B74C2/6092C9B2" Ref="Q10"  Part="1" 
-F 0 "Q10" H 3306 6846 50  0000 L CNN
-F 1 "AP3400" H 3306 6755 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 3300 6900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1901071504_ShenZhen-Quan-Li-Semiconductor-AP3400_C353070.pdf" H 3100 6800 50  0001 C CNN
-F 4 "AP3400, C353070, HSS2306A, C518790, AO3400A, C700953" H 3100 6800 50  0001 C CNN "LCSC"
-	1    3100 6800
-	0    1    1    0   
-$EndComp
-$Comp
-L glowstone:SP3012-06UTG D12
-U 1 1 60ACF205
-P 8850 4900
-F 0 "D12" H 9538 4971 50  0000 L CNN
-F 1 "SP3012-06UTG" H 9538 4880 50  0000 L CNN
-F 2 "glowstone:UDFN-14_3.5x1.35mm_P0.5mm" H 9550 4850 50  0001 L CNN
-F 3 "https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diode_arrays/littelfuse_tvs_diode_array_sp3012_datasheet.pdf.pdf" H 9175 4925 50  0001 C CNN
-	1    8850 4900
-	1    0    0    -1  
-$EndComp
+	8600 3200 8900 3200
 Wire Wire Line
 	10400 2500 10400 2600
-$Comp
-L power:GND #PWR?
-U 1 1 60B2DA63
-P 8850 5200
-AR Path="/602A2F7F/60B2DA63" Ref="#PWR?"  Part="1" 
-AR Path="/602A3FC4/60B2DA63" Ref="#PWR?"  Part="1" 
-AR Path="/60514CC5/60B2DA63" Ref="#PWR0234"  Part="1" 
-AR Path="/607B74C2/60B2DA63" Ref="#PWR0136"  Part="1" 
-F 0 "#PWR0136" H 8850 4950 50  0001 C CNN
-F 1 "GND" V 8855 5072 50  0000 R CNN
-F 2 "" H 8850 5200 50  0001 C CNN
-F 3 "" H 8850 5200 50  0001 C CNN
-	1    8850 5200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8300 4500 8300 4550
-Wire Wire Line
-	9100 4500 9100 4550
-Wire Wire Line
-	9100 4550 9200 4550
-Connection ~ 9100 4550
-Wire Wire Line
-	9200 4550 9300 4550
-Connection ~ 9200 4550
-Wire Wire Line
-	9300 4550 9400 4550
-Connection ~ 9300 4550
-Text Label 8700 4500 0    50   ~ 0
-IN0
-Text Label 8900 4500 0    50   ~ 0
-IN1
-Wire Wire Line
-	8900 4500 8900 4550
-Wire Wire Line
-	8700 4550 8700 4500
-Wire Wire Line
-	8900 4500 9000 4500
-Wire Wire Line
-	9000 4500 9000 4550
-Wire Wire Line
-	8800 4550 8800 4500
-Wire Wire Line
-	8800 4500 8700 4500
-Wire Wire Line
-	8500 4550 8600 4550
-Connection ~ 8500 4550
-Wire Wire Line
-	8400 4550 8500 4550
-Connection ~ 8400 4550
-Connection ~ 8300 4550
-Wire Wire Line
-	8300 4550 8400 4550
-$Comp
-L power:GND #PWR?
-U 1 1 60DF6C58
-P 9450 5200
-AR Path="/602A2F7F/60DF6C58" Ref="#PWR?"  Part="1" 
-AR Path="/602A3FC4/60DF6C58" Ref="#PWR?"  Part="1" 
-AR Path="/60514CC5/60DF6C58" Ref="#PWR0236"  Part="1" 
-AR Path="/607B74C2/60DF6C58" Ref="#PWR0138"  Part="1" 
-F 0 "#PWR0138" H 9450 4950 50  0001 C CNN
-F 1 "GND" V 9455 5072 50  0000 R CNN
-F 2 "" H 9450 5200 50  0001 C CNN
-F 3 "" H 9450 5200 50  0001 C CNN
-	1    9450 5200
-	1    0    0    -1  
-$EndComp
 Text Label 5850 1400 0    50   ~ 0
 OP1_OUT
-Text HLabel 4300 6900 2    50   Input ~ 0
-SCL_5V
-Text HLabel 4300 7300 2    50   Input ~ 0
-SDA_5V
 Text HLabel 7400 1400 2    50   Input ~ 0
 OP1_OUT_F
 Text HLabel 4700 4450 2    50   Input ~ 0
 TEMP1
-Text HLabel 10600 5900 2    50   Input ~ 0
+Text HLabel 8900 3350 2    50   Input ~ 0
 CURRENT1
-Text HLabel 10600 5750 2    50   Input ~ 0
+Text HLabel 8900 3200 2    50   Input ~ 0
 CURRENT0
-Text HLabel 10600 5600 2    50   Input ~ 0
-VOLTAGE1
-Text HLabel 10600 5450 2    50   Input ~ 0
-VOLTAGE0
-Text HLabel 2250 6900 0    50   Input ~ 0
-SCL
-Text HLabel 2250 7300 0    50   Input ~ 0
-SDA
 Text Label 10400 2500 1    50   ~ 0
 CURR0
-Text Label 10300 5750 0    50   ~ 0
+Text Label 8600 3200 0    50   ~ 0
 CURR0
-Text Label 8300 4500 0    50   ~ 0
-CURR1
-Text Label 9100 4500 0    50   ~ 0
-CURR0
-Text Label 10300 5900 0    50   ~ 0
+Text Label 8600 3350 0    50   ~ 0
 CURR1
 Text Notes 12250 4400 0    50   ~ 0
-FIXME:\n- connect inputs of OpAmp to MCU so it can short them for calibration\n- use resistor dividers to generate reference voltages for calibration,\n  VCC side connected to MCU to turn them off\n\n- normal gain should be 4\n- gain 4000 and 4M would be good to have\n\n- add some LEDs for GD32V\n\n- relay\n\n- add optional DC/DC for 3V3 from T2
+FIXME:\n- connect inputs of OpAmp to MCU so it can short them for calibration\n- use resistor dividers to generate reference voltages for calibration,\n  VCC side connected to MCU to turn them off\n\n- normal gain should be 4\n- gain 4000 and 4M would be good to have\n\n- add some LEDs for GD32V\n\n- relay\n\n- add optional DC/DC for 3V3 from T2\n\n- remove LC filter and replace by one that is before the opamp?
 Text Label 4600 4850 2    50   ~ 0
 CURR1
 Text Label 4600 5050 2    50   ~ 0
@@ -897,21 +588,109 @@ Text Label 7400 1400 2    50   ~ 0
 OP1_OUT_F
 Wire Wire Line
 	10100 2600 10100 3350
-Wire Wire Line
-	3900 7300 4300 7300
-Wire Wire Line
-	3600 6900 4300 6900
-Text HLabel 3350 3700 0    50   Input ~ 0
-VDDA
 $Comp
-L power:VDDA #PWR0111
-U 1 1 6058A781
-P 3350 3700
-F 0 "#PWR0111" H 3350 3550 50  0001 C CNN
-F 1 "VDDA" V 3367 3828 50  0000 L CNN
-F 2 "" H 3350 3700 50  0001 C CNN
-F 3 "" H 3350 3700 50  0001 C CNN
-	1    3350 3700
+L Device:Q_NMOS_GSD Q?
+U 1 1 6091EE3A
+P 12650 2100
+AR Path="/60846F2E/6091EE3A" Ref="Q?"  Part="1" 
+AR Path="/60514CC5/6091EE3A" Ref="Q11"  Part="1" 
+AR Path="/607B74C2/6091EE3A" Ref="Q11"  Part="1" 
+F 0 "Q11" H 12856 2146 50  0000 L CNN
+F 1 "AP3400" H 12856 2055 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 12850 2200 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1901071504_ShenZhen-Quan-Li-Semiconductor-AP3400_C353070.pdf" H 12650 2100 50  0001 C CNN
+F 4 "AP3400, C353070, HSS2306A, C518790, AO3400A, C700953" H 12650 2100 50  0001 C CNN "LCSC"
+	1    12650 2100
+	0    1    1    0   
+$EndComp
+Text HLabel 2500 4850 0    50   Input ~ 0
+SDA
+Text HLabel 2500 4750 0    50   Input ~ 0
+SCL
+Wire Wire Line
+	2500 4850 2600 4850
+Wire Wire Line
+	2500 4750 2900 4750
+Wire Wire Line
+	2750 4250 2600 4250
+Connection ~ 2750 4250
+Wire Wire Line
+	2750 4250 2750 4200
+Wire Wire Line
+	2600 4250 2600 4300
+Wire Wire Line
+	2900 4250 2750 4250
+Wire Wire Line
+	2900 4300 2900 4250
+$Comp
+L power:+3V3 #PWR0113
+U 1 1 605A2730
+P 2750 4200
+F 0 "#PWR0113" H 2750 4050 50  0001 C CNN
+F 1 "+3V3" H 2765 4373 50  0000 C CNN
+F 2 "" H 2750 4200 50  0001 C CNN
+F 3 "" H 2750 4200 50  0001 C CNN
+	1    2750 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 4600 2600 4850
+$Comp
+L Device:R R?
+U 1 1 6059AB3E
+P 2900 4450
+AR Path="/602A3FC4/6059AB3E" Ref="R?"  Part="1" 
+AR Path="/60514CC5/6059AB3E" Ref="R53"  Part="1" 
+AR Path="/607B74C2/6059AB3E" Ref="R53"  Part="1" 
+F 0 "R53" V 2693 4450 50  0000 C CNN
+F 1 "10k" V 2784 4450 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 2830 4450 50  0001 C CNN
+F 3 "~" H 2900 4450 50  0001 C CNN
+	1    2900 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6059A796
+P 2600 4450
+AR Path="/602A3FC4/6059A796" Ref="R?"  Part="1" 
+AR Path="/60514CC5/6059A796" Ref="R52"  Part="1" 
+AR Path="/607B74C2/6059A796" Ref="R52"  Part="1" 
+F 0 "R52" V 2393 4450 50  0000 C CNN
+F 1 "10k" V 2484 4450 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 2530 4450 50  0001 C CNN
+F 3 "~" H 2600 4450 50  0001 C CNN
+	1    2600 4450
+	1    0    0    -1  
+$EndComp
+Connection ~ 2900 4750
+Wire Wire Line
+	2900 4750 3350 4750
+Wire Wire Line
+	2900 4600 2900 4750
+Connection ~ 2600 4850
+Wire Wire Line
+	2600 4850 3350 4850
+$Comp
+L power:+3V3 #PWR0110
+U 1 1 60B58BAF
+P 3250 4200
+F 0 "#PWR0110" H 3250 4050 50  0001 C CNN
+F 1 "+3V3" H 3265 4373 50  0000 C CNN
+F 2 "" H 3250 4200 50  0001 C CNN
+F 3 "" H 3250 4200 50  0001 C CNN
+	1    3250 4200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+3V3 #PWR0111
+U 1 1 60B5B9CC
+P 3750 4250
+F 0 "#PWR0111" H 3750 4100 50  0001 C CNN
+F 1 "+3V3" H 3765 4423 50  0000 C CNN
+F 2 "" H 3750 4250 50  0001 C CNN
+F 3 "" H 3750 4250 50  0001 C CNN
+	1    3750 4250
 	0    1    1    0   
 $EndComp
 $EndSCHEMATC

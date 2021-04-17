@@ -18,4 +18,8 @@ K Single Pole Relay SPST-NO
 F https://www.tme.eu/Document/97f831b60f5e717b4e81dbfb5073c077/en-g5rl_uk.pdf
 $ENDCMP
 #
+$CMP L9110S
+F https://www.elecrow.com/download/datasheet-l9110.pdf
+$ENDCMP
+#
 #End Doc Library

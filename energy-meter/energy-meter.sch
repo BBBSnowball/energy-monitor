@@ -1129,4 +1129,80 @@ F 3 "" H 4850 3750 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4650 3450 4850 3450
+$Comp
+L Relay:DIPxx-1Axx-11x K2
+U 1 1 60CDDACF
+P 9700 1200
+F 0 "K2" H 10030 1246 50  0000 L CNN
+F 1 "DNP / HF3FF/005-1HST" H 10030 1155 50  0000 L CNN
+F 2 "energy-meter:Relay_HF3FF_005" H 10050 1150 50  0001 L CNN
+F 3 "https://standexelectronics.com/wp-content/uploads/datasheet_reed_relay_DIP.pdf" H 9700 1200 50  0001 C CNN
+F 4 "https://www.tme.eu/de/details/hf3ff_005-1hst/elektromagnetische-mini-relais/hongfa-relay/" H 9700 1200 50  0001 C CNN "TME"
+	1    9700 1200
+	1    0    0    -1  
+$EndComp
+Text GLabel 9950 850  2    50   Input ~ 0
+L_OUT
+Wire Wire Line
+	9950 850  9900 850 
+Wire Wire Line
+	9900 850  9900 900 
+Text GLabel 10350 1550 2    50   Input ~ 0
+L_IN
+Wire Wire Line
+	9900 1550 9900 1500
+Text Notes 9550 750  0    50   ~ 0
+alternative relay:\ncheap but not bistable
+Text Label 6850 2200 0    50   ~ 0
+coil+
+Text Label 6850 1500 0    50   ~ 0
+coil-
+Text Label 9100 850  0    50   ~ 0
+coil-
+Text Label 9100 1550 0    50   ~ 0
+coil+
+Wire Wire Line
+	9100 1550 9500 1550
+Wire Wire Line
+	9500 1550 9500 1500
+Wire Wire Line
+	9100 850  9500 850 
+Wire Wire Line
+	9500 850  9500 900 
+Text Notes 10050 1700 0    50   ~ 0
+connect with wire
+$Comp
+L energy-meter:AP-2500 T3
+U 1 1 60CFE5A9
+P 7100 3400
+F 0 "T3" V 7050 3250 50  0000 L CNN
+F 1 "DNP / AP-2500" V 7150 2750 50  0000 L CNN
+F 2 "energy-meter:AP-2500" H 7100 3400 50  0001 C CNN
+F 3 "https://www.coilcraft.com/pdfs/cst.pdf" H 7100 3400 50  0001 C CNN
+F 4 "https://www.tme.eu/de/details/ap-2500/stromwandler/talema/" V 7100 3400 50  0001 C CNN "TME"
+	1    7100 3400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7300 3100 7600 3100
+Connection ~ 7600 3100
+Wire Wire Line
+	7600 3700 7300 3700
+Connection ~ 7600 3700
+$Comp
+L Connector:TestPoint TP?
+U 1 1 60D46B3F
+P 9900 1550
+F 0 "TP?" H 9950 1800 50  0000 R CNN
+F 1 "TestPoint" H 9958 1577 50  0001 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm" H 10100 1550 50  0001 C CNN
+F 3 "~" H 10100 1550 50  0001 C CNN
+	1    9900 1550
+	-1   0    0    1   
+$EndComp
+Connection ~ 9900 1550
+Wire Wire Line
+	10350 1550 10200 1550
+Wire Wire Line
+	9900 1550 10100 1550
 $EndSCHEMATC

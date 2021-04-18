@@ -408,8 +408,6 @@ F 3 "" H 7500 3850 50  0001 C CNN
 $EndComp
 Text Label 7500 2950 1    50   ~ 0
 VDDA2
-Text Notes 7600 4050 0    50   ~ 0
-For 3.3V/2+-0.5V:\n49.45k and 65.55k
 $Comp
 L Device:R R85
 U 1 1 608D3C86
@@ -446,8 +444,8 @@ Text Label 8600 3200 0    50   ~ 0
 CURR0
 Text Label 8600 3350 0    50   ~ 0
 CURR1
-Text Notes 12250 4400 0    50   ~ 0
-FIXME:\n- connect inputs of OpAmp to MCU so it can short them for calibration\n- use resistor dividers to generate reference voltages for calibration,\n  VCC side connected to MCU to turn them off\n\n- normal gain should be 4\n- gain 4000 and 4M would be good to have\n\n- remove LC filter and replace by one that is before the opamp?
+Text Notes 7450 6100 0    50   ~ 0
+FIXME:\n- use OP07 as suggested here?\n  https://datasheet.lcsc.com/szlcsc/1810010312_Qingxian-Zeming-Langxi-Elec-ZMCT104C_C84212.pdf\n  -> first stage with MCP and similar to that ^^ (see my LTSpice simulation),\n  second and third stage with 1000x gain, connect all intermediate signals to\n  ADC so GD32 can choose gain by choosing the right signal\n- connect inputs of OpAmp to MCU so it can short them for calibration\n- use resistor dividers to generate reference voltages for calibration,\n  VCC side connected to MCU to turn them off\n\n- normal gain should be 4\n- gain 4000 and 4M would be good to have\n\n- remove LC filter and replace by one that is before the opamp?
 Text Label 4600 4850 2    50   ~ 0
 CURR1
 Text Label 4600 5050 2    50   ~ 0
@@ -676,6 +674,17 @@ F 1 "+3V3" H 3915 5823 50  0000 C CNN
 F 2 "" H 3900 5650 50  0001 C CNN
 F 3 "" H 3900 5650 50  0001 C CNN
 	1    3900 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:MCP6L91T-EOT U2
+U 1 1 60E518DB
+P 8750 2000
+F 0 "U2" H 9094 2046 50  0000 L CNN
+F 1 "MCP6V96T-E/OT" H 9094 1955 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 8650 1800 50  0001 L CNN
+F 3 "https://www.mouser.de/datasheet/2/268/MCP6V96_Family_Data_Sheet_DS20006467A-1948680.pdf" H 8750 2200 50  0001 C CNN
+	1    8750 2000
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

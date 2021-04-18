@@ -3,7 +3,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 2
+Sheet 2 3
 Title ""
 Date ""
 Rev ""
@@ -685,6 +685,28 @@ F 1 "MCP6V96T-E/OT" H 9094 1955 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-5" H 8650 1800 50  0001 L CNN
 F 3 "https://www.mouser.de/datasheet/2/268/MCP6V96_Family_Data_Sheet_DS20006467A-1948680.pdf" H 8750 2200 50  0001 C CNN
 	1    8750 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Analog_Switch:TS5A3159ADBVR U3
+U 2 1 60F119FA
+P 2400 1350
+F 0 "U3" H 2400 1592 50  0000 C CNN
+F 1 "TS5A3159ADBVR" H 2400 1501 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" H 2400 1050 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/ts5a3159a.pdf" H 2400 1350 50  0001 C CNN
+	2    2400 1350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Analog_Switch:TS5A3159ADBVR U3
+U 1 1 60F12E08
+P 1150 1350
+F 0 "U3" H 1330 1396 50  0000 L CNN
+F 1 "TS5A3159ADBVR" H 1330 1305 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6" H 1150 1050 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/ts5a3159a.pdf" H 1150 1350 50  0001 C CNN
+	1    1150 1350
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

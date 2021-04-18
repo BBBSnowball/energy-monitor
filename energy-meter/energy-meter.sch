@@ -3,7 +3,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 2
+Sheet 1 3
 Title ""
 Date ""
 Rev ""
@@ -258,7 +258,7 @@ Wire Wire Line
 Text GLabel 5600 1100 0    50   Input ~ 0
 L_IN
 Text GLabel 5600 1200 0    50   Input ~ 0
-L_OUT
+L_OUT2
 Wire Wire Line
 	5600 1200 5750 1200
 Text GLabel 5600 1000 0    50   Input ~ 0
@@ -492,10 +492,10 @@ $EndComp
 Wire Wire Line
 	4600 5400 4700 5400
 $Comp
-L Device:Net-Tie_2 NT2
+L Device:Net-Tie_2 NT1
 U 1 1 60A60821
 P 8150 3550
-F 0 "NT2" H 8150 3500 50  0000 C CNN
+F 0 "NT1" H 8150 3500 50  0000 C CNN
 F 1 "Net-Tie_2" H 8150 3640 50  0001 C CNN
 F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 8150 3550 50  0001 C CNN
 F 3 "~" H 8150 3550 50  0001 C CNN
@@ -724,14 +724,14 @@ Text Label 2600 2000 0    50   ~ 0
 RELAY_RESET
 Text Label 2600 2200 0    50   ~ 0
 RELAY_SET
-Text Label 850  6300 0    50   ~ 0
+Text Label 850  5550 0    50   ~ 0
 RELAY_RESET
-Text Label 850  6150 0    50   ~ 0
+Text Label 850  5400 0    50   ~ 0
 RELAY_SET
 Wire Wire Line
-	850  6300 1400 6300
+	850  5550 1400 5550
 Wire Wire Line
-	1400 6150 850  6150
+	1400 5400 850  5400
 Wire Wire Line
 	4900 2200 4700 2200
 Wire Wire Line
@@ -759,14 +759,10 @@ Text Label 5050 4800 2    50   ~ 0
 PINENUT_IO8_BOOT
 Wire Wire Line
 	5050 4800 4300 4800
-Text Label 850  5550 0    50   ~ 0
+Text Label 850  3900 0    50   ~ 0
 PINENUT_RST
-Text Label 650  5400 0    50   ~ 0
+Text Label 650  3750 0    50   ~ 0
 PINENUT_IO8_BOOT
-Wire Wire Line
-	1400 5550 850  5550
-Wire Wire Line
-	650  5400 1400 5400
 $Comp
 L Device:D_Schottky D1
 U 1 1 60BD7243
@@ -1099,249 +1095,16 @@ F 3 "" H 3850 4200 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3650 3900 3850 3900
-$Comp
-L Relay:DIPxx-1Axx-11x K2
-U 1 1 60CDDACF
-P 9700 1200
-F 0 "K2" H 10050 1350 50  0000 L CNN
-F 1 "DNP / HF3FF/005-1HST" H 10050 1250 50  0000 L CNN
-F 2 "energy-meter:Relay_HF3FF_005" H 10050 1150 50  0001 L CNN
-F 3 "https://standexelectronics.com/wp-content/uploads/datasheet_reed_relay_DIP.pdf" H 9700 1200 50  0001 C CNN
-F 4 "https://www.tme.eu/de/details/hf3ff_005-1hst/elektromagnetische-mini-relais/hongfa-relay/" H 9700 1200 50  0001 C CNN "TME"
-	1    9700 1200
-	1    0    0    -1  
-$EndComp
-Text GLabel 9950 850  2    50   Input ~ 0
-L_OUT
-Wire Wire Line
-	9950 850  9900 850 
-Wire Wire Line
-	9900 850  9900 900 
-Text GLabel 10400 1550 2    50   Input ~ 0
-L_IN
-Wire Wire Line
-	9900 1550 9900 1500
-Text Notes 8200 800  0    50   ~ 0
-alternative relay:\ncheap but not bistable
 Text Label 5050 2300 0    50   ~ 0
 coil+
 Text Label 5050 1600 0    50   ~ 0
 coil-
-Wire Wire Line
-	9500 1550 9500 1500
-Wire Wire Line
-	9500 850  9500 900 
-Text Notes 10350 1750 0    50   ~ 0
-connect with wire
-$Comp
-L energy-meter:AP-2500 T3
-U 1 1 60CFE5A9
-P 6750 3850
-F 0 "T3" V 6700 3700 50  0000 L CNN
-F 1 "DNP / AP-2500" V 6800 3200 50  0000 L CNN
-F 2 "energy-meter:AP-2500" H 6750 3850 50  0001 C CNN
-F 3 "https://www.coilcraft.com/pdfs/cst.pdf" H 6750 3850 50  0001 C CNN
-F 4 "https://www.tme.eu/de/details/ap-2500/stromwandler/talema/" V 6750 3850 50  0001 C CNN "TME"
-	1    6750 3850
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6950 3550 7250 3550
-Connection ~ 7250 3550
-Wire Wire Line
-	7250 4150 6950 4150
-Connection ~ 7250 4150
-$Comp
-L Connector:TestPoint TP1
-U 1 1 60D46B3F
-P 10100 1550
-F 0 "TP1" H 10150 1800 50  0000 R CNN
-F 1 "TestPoint" H 10158 1577 50  0001 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm" H 10300 1550 50  0001 C CNN
-F 3 "~" H 10300 1550 50  0001 C CNN
-	1    10100 1550
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	10400 1550 10250 1550
-Wire Wire Line
-	9900 1550 10100 1550
-$Comp
-L Connector:TestPoint TP2
-U 1 1 60D5530D
-P 10250 1550
-F 0 "TP2" H 10300 1800 50  0000 R CNN
-F 1 "TestPoint" H 10308 1577 50  0001 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm" H 10450 1550 50  0001 C CNN
-F 3 "~" H 10450 1550 50  0001 C CNN
-	1    10250 1550
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP3
-U 1 1 60D6E7AC
-P 10750 750
-F 0 "TP3" H 10800 1000 50  0000 R CNN
-F 1 "TestPoint" H 10808 777 50  0001 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm" H 10950 750 50  0001 C CNN
-F 3 "~" H 10950 750 50  0001 C CNN
-	1    10750 750 
-	0    -1   -1   0   
-$EndComp
-Text Notes 8700 2150 0    50   ~ 0
-alternative use of the 2nd relay:\n- cut L_OUT around TP3\n- TP3 -> through T3 -> TP5\n- N -> TP4\n- L_OUT to external load, as usual\n=> K2 enables internal load
-$Comp
-L Connector:TestPoint TP4
-U 1 1 60D74A76
-P 10850 1400
-F 0 "TP4" H 10900 1650 50  0000 R CNN
-F 1 "TestPoint" H 10908 1427 50  0001 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm" H 11050 1400 50  0001 C CNN
-F 3 "~" H 11050 1400 50  0001 C CNN
-	1    10850 1400
-	0    1    1    0   
-$EndComp
-Wire Notes Line
-	8100 2200 11150 2200
-Wire Notes Line
-	11150 2200 11150 600 
-Wire Notes Line
-	11150 600  8100 600 
-Wire Notes Line
-	8100 600  8100 2200
-$Comp
-L Device:R R5
-U 1 1 60D8261D
-P 10500 1400
-F 0 "R5" V 10400 1300 50  0000 C CNN
-F 1 "39kOhm, 2W, 1%" V 10350 1700 50  0000 C CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.52x3.35mm_HandSolder" V 10430 1400 50  0001 C CNN
-F 3 "~" H 10500 1400 50  0001 C CNN
-F 4 "https://www.tme.eu/de/details/sp12-39k-1%25/widerstande-smd-2512/royal-ohm/sp123wf3902t2e/" H 10500 1400 50  0001 C CNN "TME"
-	1    10500 1400
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	10650 1400 10850 1400
-Wire Wire Line
-	10350 1400 10100 1400
-Wire Wire Line
-	10100 1400 10100 1550
-Connection ~ 10100 1550
-$Comp
-L Connector:TestPoint TP5
-U 1 1 60D9EED0
-P 10750 950
-F 0 "TP5" H 10800 1200 50  0000 R CNN
-F 1 "TestPoint" H 10808 977 50  0001 L CNN
-F 2 "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm" H 10950 950 50  0001 C CNN
-F 3 "~" H 10950 950 50  0001 C CNN
-	1    10750 950 
-	0    -1   -1   0   
-$EndComp
-Text GLabel 10850 850  2    50   Input ~ 0
-L_OUT
-Wire Wire Line
-	10850 850  10800 850 
-Wire Wire Line
-	10800 850  10800 750 
-Wire Wire Line
-	10800 750  10750 750 
-Wire Wire Line
-	10800 850  10800 950 
-Wire Wire Line
-	10800 950  10750 950 
-Connection ~ 10800 850 
-$Comp
-L Device:Q_NMOS_GSD Q?
-U 1 1 60DB5F5D
-P 8450 1300
-AR Path="/60846F2E/60DB5F5D" Ref="Q?"  Part="1" 
-AR Path="/60514CC5/60DB5F5D" Ref="Q?"  Part="1" 
-AR Path="/607B74C2/60DB5F5D" Ref="Q?"  Part="1" 
-AR Path="/60DB5F5D" Ref="Q1"  Part="1" 
-F 0 "Q1" H 8656 1346 50  0000 L CNN
-F 1 "AP3400" H 8656 1255 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 8650 1400 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1901071504_ShenZhen-Quan-Li-Semiconductor-AP3400_C353070.pdf" H 8450 1300 50  0001 C CNN
-F 4 "AP3400, C353070, HSS2306A, C518790, AO3400A, C700953" H 8450 1300 50  0001 C CNN "LCSC"
-	1    8450 1300
-	1    0    0    -1  
-$EndComp
 Text Label 3500 1350 2    50   ~ 0
 VCC_COIL
-Text Label 9100 1550 0    50   ~ 0
-VCC_COIL
-$Comp
-L power:GND #PWR0138
-U 1 1 60DE6722
-P 8550 1500
-F 0 "#PWR0138" H 8550 1250 50  0001 C CNN
-F 1 "GND" V 8555 1372 50  0000 R CNN
-F 2 "" H 8550 1500 50  0001 C CNN
-F 3 "" H 8550 1500 50  0001 C CNN
-	1    8550 1500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8550 850  8550 1100
-Wire Wire Line
-	8550 850  9050 850 
-$Comp
-L Device:D_Schottky D7
-U 1 1 60DECCB9
-P 9050 1150
-F 0 "D7" V 9050 1000 50  0000 L CNN
-F 1 "D_Schottky" H 9050 1275 50  0001 C CNN
-F 2 "Diode_SMD:D_SMA_Handsoldering" H 9050 1150 50  0001 C CNN
-F 3 "~" H 9050 1150 50  0001 C CNN
-F 4 "C181203, C364270, C50645" H 9050 1150 50  0001 C CNN "LCSC"
-	1    9050 1150
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	9050 1000 9050 850 
-Connection ~ 9050 850 
-Wire Wire Line
-	9050 850  9500 850 
-Wire Wire Line
-	9050 1550 9050 1300
-Wire Wire Line
-	9050 1550 9500 1550
 Text Label 1000 1000 0    50   ~ 0
 RELAY2
 Wire Wire Line
 	1000 1000 1400 1000
-Text Label 8250 1300 1    50   ~ 0
-RELAY2
-$Comp
-L Device:R R?
-U 1 1 60E1F689
-P 8250 1550
-AR Path="/602A3FC4/60E1F689" Ref="R?"  Part="1" 
-AR Path="/60514CC5/60E1F689" Ref="R?"  Part="1" 
-AR Path="/607B74C2/60E1F689" Ref="R?"  Part="1" 
-AR Path="/60E1F689" Ref="R8"  Part="1" 
-F 0 "R8" V 8043 1550 50  0000 C CNN
-F 1 "10k" V 8134 1550 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 8180 1550 50  0001 C CNN
-F 3 "~" H 8250 1550 50  0001 C CNN
-	1    8250 1550
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR0139
-U 1 1 60E1FE13
-P 8250 1700
-F 0 "#PWR0139" H 8250 1450 50  0001 C CNN
-F 1 "GND" V 8255 1572 50  0000 R CNN
-F 2 "" H 8250 1700 50  0001 C CNN
-F 3 "" H 8250 1700 50  0001 C CNN
-	1    8250 1700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8250 1400 8250 1300
 $Comp
 L Device:R R?
 U 1 1 60E25C7D
@@ -1499,4 +1262,93 @@ Wire Wire Line
 Connection ~ 8400 3250
 Wire Wire Line
 	8400 3250 8650 3250
+Text Label 9250 850  0    50   ~ 0
+coil-
+Text Label 9250 1550 0    50   ~ 0
+coil+
+Text GLabel 9950 1550 2    50   Input ~ 0
+L_OUT
+Text GLabel 9950 850  2    50   Input ~ 0
+L_IN
+Wire Wire Line
+	9900 1550 9950 1550
+Wire Wire Line
+	9250 1550 9500 1550
+Wire Wire Line
+	9250 850  9500 850 
+Wire Notes Line
+	9150 600  9150 1650
+Wire Notes Line
+	11150 600  9150 600 
+Wire Notes Line
+	11150 1650 11150 600 
+Wire Notes Line
+	9150 1650 11150 1650
+Wire Wire Line
+	9500 850  9500 900 
+Wire Wire Line
+	9500 1550 9500 1500
+Text Notes 10200 1400 0    50   ~ 0
+alternative relay:\ncheap but not bistable
+Wire Wire Line
+	9900 1550 9900 1500
+Wire Wire Line
+	9900 850  9900 900 
+Wire Wire Line
+	9950 850  9900 850 
+$Comp
+L Relay:DIPxx-1Axx-11x K2
+U 1 1 60CDDACF
+P 9700 1200
+F 0 "K2" H 10050 1350 50  0000 L CNN
+F 1 "DNP / HF3FF/005-1HST" H 10050 1250 50  0000 L CNN
+F 2 "energy-meter:Relay_HF3FF_005" H 10050 1150 50  0001 L CNN
+F 3 "https://standexelectronics.com/wp-content/uploads/datasheet_reed_relay_DIP.pdf" H 9700 1200 50  0001 C CNN
+F 4 "https://www.tme.eu/de/details/hf3ff_005-1hst/elektromagnetische-mini-relais/hongfa-relay/" H 9700 1200 50  0001 C CNN "TME"
+	1    9700 1200
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 6800 650  700  1200
+U 60F98E6C
+F0 "Calibration circuits for 230V" 50
+F1 "calibrate.sch" 50
+F2 "N" I R 7500 750 50 
+F3 "L_OUT" I R 7500 900 50 
+F4 "L_OUT2" I R 7500 1050 50 
+F5 "ENA_27k" I R 7500 1250 50 
+F6 "ENA_470k" I R 7500 1350 50 
+$EndSheet
+Text GLabel 7550 1050 2    50   Input ~ 0
+L_OUT2
+Wire Wire Line
+	7550 750  7500 750 
+Text GLabel 7550 750  2    50   Input ~ 0
+N
+Text GLabel 7550 900  2    50   Input ~ 0
+L_OUT
+Wire Wire Line
+	7550 900  7500 900 
+Wire Wire Line
+	7550 1050 7500 1050
+Wire Wire Line
+	650  3750 1400 3750
+Wire Wire Line
+	1400 3900 850  3900
+Text Label 7950 1250 2    50   ~ 0
+ENA_27k
+Text Label 7950 1350 2    50   ~ 0
+ENA_470k
+Wire Wire Line
+	7500 1350 7950 1350
+Wire Wire Line
+	7500 1250 7950 1250
+Text Label 850  6300 0    50   ~ 0
+ENA_27k
+Text Label 850  6150 0    50   ~ 0
+ENA_470k
+Wire Wire Line
+	850  6150 1400 6150
+Wire Wire Line
+	850  6300 1400 6300
 $EndSCHEMATC

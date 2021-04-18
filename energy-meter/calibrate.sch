@@ -157,87 +157,6 @@ Text GLabel 1250 1000 2    50   Input ~ 0
 L_OUT
 Text GLabel 1250 900  2    50   Input ~ 0
 N
-Text Notes 8700 3900 0    50   ~ 0
-alternative use of the 2nd relay:\n- cut L_OUT around TP3\n- TP3 -> through T3 -> TP5\n- N -> TP4\n- L_OUT to external load, as usual\n=> K2 enables internal load
-$Comp
-L Device:Q_NMOS_GSD Q?
-U 1 1 61066D83
-P 9400 4550
-AR Path="/60846F2E/61066D83" Ref="Q?"  Part="1" 
-AR Path="/60514CC5/61066D83" Ref="Q?"  Part="1" 
-AR Path="/607B74C2/61066D83" Ref="Q?"  Part="1" 
-AR Path="/61066D83" Ref="Q?"  Part="1" 
-AR Path="/60F98E6C/61066D83" Ref="Q1"  Part="1" 
-F 0 "Q1" H 9606 4596 50  0000 L CNN
-F 1 "AP3400" H 9606 4505 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 9600 4650 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1901071504_ShenZhen-Quan-Li-Semiconductor-AP3400_C353070.pdf" H 9400 4550 50  0001 C CNN
-F 4 "AP3400, C353070, HSS2306A, C518790, AO3400A, C700953" H 9400 4550 50  0001 C CNN "LCSC"
-	1    9400 4550
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 61066D89
-P 9500 4750
-AR Path="/61066D89" Ref="#PWR?"  Part="1" 
-AR Path="/60F98E6C/61066D89" Ref="#PWR0138"  Part="1" 
-F 0 "#PWR0138" H 9500 4500 50  0001 C CNN
-F 1 "GND" V 9505 4622 50  0000 R CNN
-F 2 "" H 9500 4750 50  0001 C CNN
-F 3 "" H 9500 4750 50  0001 C CNN
-	1    9500 4750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9500 4100 9500 4350
-$Comp
-L Device:D_Schottky D?
-U 1 1 61066D91
-P 10150 4650
-AR Path="/61066D91" Ref="D?"  Part="1" 
-AR Path="/60F98E6C/61066D91" Ref="D7"  Part="1" 
-F 0 "D7" V 10150 4500 50  0000 L CNN
-F 1 "D_Schottky" H 10150 4775 50  0001 C CNN
-F 2 "Diode_SMD:D_SMA_Handsoldering" H 10150 4650 50  0001 C CNN
-F 3 "~" H 10150 4650 50  0001 C CNN
-F 4 "C181203, C364270, C50645" H 10150 4650 50  0001 C CNN "LCSC"
-	1    10150 4650
-	0    -1   -1   0   
-$EndComp
-Text Label 9200 4550 1    50   ~ 0
-RELAY2
-$Comp
-L Device:R R?
-U 1 1 61066D98
-P 9200 4800
-AR Path="/602A3FC4/61066D98" Ref="R?"  Part="1" 
-AR Path="/60514CC5/61066D98" Ref="R?"  Part="1" 
-AR Path="/607B74C2/61066D98" Ref="R?"  Part="1" 
-AR Path="/61066D98" Ref="R?"  Part="1" 
-AR Path="/60F98E6C/61066D98" Ref="R8"  Part="1" 
-F 0 "R8" V 8993 4800 50  0000 C CNN
-F 1 "10k" V 9084 4800 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 9130 4800 50  0001 C CNN
-F 3 "~" H 9200 4800 50  0001 C CNN
-	1    9200 4800
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 61066D9E
-P 9200 4950
-AR Path="/61066D9E" Ref="#PWR?"  Part="1" 
-AR Path="/60F98E6C/61066D9E" Ref="#PWR0139"  Part="1" 
-F 0 "#PWR0139" H 9200 4700 50  0001 C CNN
-F 1 "GND" V 9205 4822 50  0000 R CNN
-F 2 "" H 9200 4950 50  0001 C CNN
-F 3 "" H 9200 4950 50  0001 C CNN
-	1    9200 4950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9200 4650 9200 4550
 $Comp
 L Device:R R?
 U 1 1 610804C3
@@ -328,19 +247,6 @@ F 2 "" H 2100 2450 50  0001 C CNN
 F 3 "" H 2100 2450 50  0001 C CNN
 	1    2100 2450
 	1    0    0    -1  
-$EndComp
-$Comp
-L Jumper:SolderJumper_2_Open JP?
-U 1 1 610BEE8F
-P 8500 5350
-AR Path="/610BEE8F" Ref="JP?"  Part="1" 
-AR Path="/60F98E6C/610BEE8F" Ref="JP10"  Part="1" 
-F 0 "JP10" V 8500 5418 50  0000 L CNN
-F 1 "SolderJumper_2_Open" H 8500 5464 50  0001 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 8500 5350 50  0001 C CNN
-F 3 "~" H 8500 5350 50  0001 C CNN
-	1    8500 5350
-	0    1    1    0   
 $EndComp
 $Comp
 L power:GND #PWR?
@@ -465,19 +371,6 @@ F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 1688 2150 50  
 F 3 "~" H 1650 2300 50  0001 C CNN
 	1    1650 2300
 	1    0    0    -1  
-$EndComp
-$Comp
-L Jumper:SolderJumper_2_Bridged JP?
-U 1 1 610BEE7D
-P 8500 4900
-AR Path="/610BEE7D" Ref="JP?"  Part="1" 
-AR Path="/60F98E6C/610BEE7D" Ref="JP9"  Part="1" 
-F 0 "JP9" V 8500 4968 50  0000 L CNN
-F 1 "SolderJumper_2_Bridged" H 8500 5014 50  0001 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm" H 8500 4900 50  0001 C CNN
-F 3 "~" H 8500 4900 50  0001 C CNN
-	1    8500 4900
-	0    1    1    0   
 $EndComp
 Wire Wire Line
 	2000 2550 2000 2500

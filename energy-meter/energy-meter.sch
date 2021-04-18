@@ -41,28 +41,14 @@ F 3 "" H 1850 5550 50  0001 C CNN
 	3    1850 5550
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1400 1750 1000 1750
-Wire Wire Line
-	1400 1900 1000 1900
-Text Label 1000 1750 0    50   ~ 0
-DAC0
 Text Label 1150 3000 0    50   ~ 0
 SCL
 Text Label 1150 3150 0    50   ~ 0
 SDA
-Text Label 1000 1600 0    50   ~ 0
-TEMP1
-Text Label 950  1450 0    50   ~ 0
-OP1_OUT_F
 Wire Wire Line
 	1150 3150 1400 3150
 Wire Wire Line
 	1400 3000 1150 3000
-Wire Wire Line
-	1000 1600 1400 1600
-Wire Wire Line
-	1400 1450 950  1450
 Text Notes 1850 1850 3    50   ~ 0
 ADC
 Wire Notes Line
@@ -142,22 +128,6 @@ Wire Wire Line
 	2250 6550 2500 6550
 Text Label 2300 6550 0    50   ~ 0
 5V
-Text Label 3250 5600 0    50   ~ 0
-SCL
-Text Label 3250 5700 0    50   ~ 0
-SDA
-Text Label 3100 6200 0    50   ~ 0
-TEMP1
-Text Label 3050 6400 0    50   ~ 0
-OP1_OUT_F
-Wire Wire Line
-	3250 5700 3500 5700
-Wire Wire Line
-	3500 5600 3250 5600
-Wire Wire Line
-	3100 6200 3500 6200
-Wire Wire Line
-	3500 6400 3050 6400
 $Comp
 L energy-meter:G5RL-U1A-E K1
 U 1 1 608BFE77
@@ -295,14 +265,14 @@ Text GLabel 6750 2850 0    50   Input ~ 0
 L_IN
 Text GLabel 6750 3250 0    50   Input ~ 0
 N
-Text Label 5050 5950 2    50   ~ 0
+Text Label 5250 5400 2    50   ~ 0
 CURRENT0
-Text Label 5050 6050 2    50   ~ 0
+Text Label 5250 5500 2    50   ~ 0
 CURRENT1
 Wire Wire Line
-	5050 5950 4600 5950
+	5250 5400 4600 5400
 Wire Wire Line
-	5050 6050 4600 6050
+	5250 5500 4600 5500
 Text Label 8700 2850 0    50   ~ 0
 VOLTAGE0
 Text Label 7950 3250 2    50   ~ 0
@@ -476,51 +446,21 @@ Wire Wire Line
 	950  2700 1400 2700
 Wire Wire Line
 	1400 2550 950  2550
-$Comp
-L power:+3V3 #PWR?
-U 1 1 60A51933
-P 4700 5400
-AR Path="/607B74C2/60A51933" Ref="#PWR?"  Part="1" 
-AR Path="/60A51933" Ref="#PWR0108"  Part="1" 
-F 0 "#PWR0108" H 4700 5250 50  0001 C CNN
-F 1 "+3V3" V 4715 5528 50  0000 L CNN
-F 2 "" H 4700 5400 50  0001 C CNN
-F 3 "" H 4700 5400 50  0001 C CNN
-	1    4700 5400
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4600 5400 4700 5400
-$Comp
-L Device:Net-Tie_2 NT1
-U 1 1 60A60821
-P 8150 3550
-F 0 "NT1" H 8150 3500 50  0000 C CNN
-F 1 "Net-Tie_2" H 8150 3640 50  0001 C CNN
-F 2 "NetTie:NetTie-2_SMD_Pad0.5mm" H 8150 3550 50  0001 C CNN
-F 3 "~" H 8150 3550 50  0001 C CNN
-	1    8150 3550
-	1    0    0    -1  
-$EndComp
-Text Label 8350 3550 0    50   ~ 0
-BIAS
-Wire Wire Line
-	8350 3550 8250 3550
 $Sheet
 S 3500 5300 1100 2250
 U 607B74C2
 F0 "Modified LCR Meter" 50
 F1 "lcr.sch" 50
-F2 "OP1_OUT_F" I L 3500 6400 50 
-F3 "TEMP1" I L 3500 6200 50 
-F4 "VDDA" I R 4600 5400 50 
-F5 "SCL" I L 3500 5600 50 
-F6 "SDA" I L 3500 5700 50 
-F7 "CURRENT1" I R 4600 6050 50 
-F8 "CURRENT0" I R 4600 5950 50 
+F2 "CURRENT1" I R 4600 5500 50 
+F3 "CURRENT0" I R 4600 5400 50 
+F4 "BIAS_MCU" I R 4600 5650 50 
+F5 "TUNE_OFFSET0" I R 4600 5750 50 
+F6 "CURRENT_OUT0" I R 4600 5850 50 
+F7 "ENA_1000x" I R 4600 6300 50 
+F8 "SHORT_CURRENT" I R 4600 6100 50 
+F9 "CURRENT_OUT1" I R 4600 5950 50 
+F10 "ENA_100x" I R 4600 6200 50 
 $EndSheet
-Text Label 1000 1900 0    50   ~ 0
-DAC1
 $Comp
 L energy-meter:L9110S U1
 U 1 1 60B7564C
@@ -992,30 +932,6 @@ Wire Wire Line
 Wire Wire Line
 	9000 2850 8650 2850
 Connection ~ 8650 2850
-$Comp
-L Device:D_Zener D6
-U 1 1 60C5DD5E
-P 9000 3750
-F 0 "D6" V 8954 3829 50  0000 L CNN
-F 1 "ESD5Z5.0T1G" V 9045 3829 50  0000 L CNN
-F 2 "Diode_SMD:D_SOD-523" H 9000 3750 50  0001 C CNN
-F 3 "https://www.onsemi.com/pub/Collateral/ESD5Z2.5T1-D.PDF" H 9000 3750 50  0001 C CNN
-	1    9000 3750
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GND #PWR0135
-U 1 1 60C5E7AA
-P 9000 3900
-F 0 "#PWR0135" H 9000 3650 50  0001 C CNN
-F 1 "GND" V 9005 3772 50  0000 R CNN
-F 2 "" H 9000 3900 50  0001 C CNN
-F 3 "" H 9000 3900 50  0001 C CNN
-	1    9000 3900
-	1    0    0    -1  
-$EndComp
-Text Label 9000 3600 2    50   ~ 0
-CURRENT0
 Text Label 2850 4700 0    50   ~ 0
 SCL
 Wire Wire Line
@@ -1101,10 +1017,6 @@ Text Label 5050 1600 0    50   ~ 0
 coil-
 Text Label 3500 1350 2    50   ~ 0
 VCC_COIL
-Text Label 1000 1000 0    50   ~ 0
-RELAY2
-Wire Wire Line
-	1000 1000 1400 1000
 $Comp
 L Device:R R?
 U 1 1 60E25C7D
@@ -1167,39 +1079,10 @@ F 3 "" H 3050 2650 50  0001 C CNN
 	1    3050 2650
 	1    0    0    -1  
 $EndComp
-Text Label 950  2050 0    50   ~ 0
-CURRENT0
 Wire Wire Line
-	950  2050 1400 2050
-$Comp
-L Device:D_Zener D8
-U 1 1 60E7A9FF
-P 8000 3700
-F 0 "D8" V 7954 3779 50  0000 L CNN
-F 1 "ESD5Z5.0T1G" V 8045 3779 50  0000 L CNN
-F 2 "Diode_SMD:D_SOD-523" H 8000 3700 50  0001 C CNN
-F 3 "https://www.onsemi.com/pub/Collateral/ESD5Z2.5T1-D.PDF" H 8000 3700 50  0001 C CNN
-	1    8000 3700
-	0    1    1    0   
-$EndComp
+	7250 3550 7950 3550
 Wire Wire Line
-	7250 3550 8000 3550
-Wire Wire Line
-	8000 3550 8050 3550
-Connection ~ 8000 3550
-$Comp
-L Device:D_Zener D9
-U 1 1 60E7AE94
-P 8000 4000
-F 0 "D9" V 8046 3921 50  0000 R CNN
-F 1 "ESD5Z5.0T1G" V 7955 3921 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 8000 4000 50  0001 C CNN
-F 3 "https://www.onsemi.com/pub/Collateral/ESD5Z2.5T1-D.PDF" H 8000 4000 50  0001 C CNN
-	1    8000 4000
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	7250 4150 8000 4150
+	7250 4150 7950 4150
 Wire Wire Line
 	8300 2850 8050 2850
 Connection ~ 8300 2850
@@ -1351,4 +1234,62 @@ Wire Wire Line
 	850  6150 1400 6150
 Wire Wire Line
 	850  6300 1400 6300
+Text Label 5250 5750 2    50   ~ 0
+TUNE_OFFSET
+Text Label 5250 6100 2    50   ~ 0
+SHORT_CURRENT
+Text Label 5250 6200 2    50   ~ 0
+ENA_100x
+Text Label 5250 6300 2    50   ~ 0
+ENA_1000x
+Text Label 5250 5850 2    50   ~ 0
+CURRENT_OUT0
+Text Label 5250 5950 2    50   ~ 0
+CURRENT_OUT1
+Text Label 5250 5650 2    50   ~ 0
+BIAS_MCU
+Wire Wire Line
+	4600 5650 5250 5650
+Wire Wire Line
+	5250 5750 4600 5750
+Wire Wire Line
+	4600 5850 5250 5850
+Wire Wire Line
+	5250 5950 4600 5950
+Wire Wire Line
+	4600 6100 5250 6100
+Wire Wire Line
+	5250 6200 4600 6200
+Wire Wire Line
+	4600 6300 5250 6300
+Text Label 750  1750 0    50   ~ 0
+TUNE_OFFSET
+Text Label 750  700  0    50   ~ 0
+SHORT_CURRENT
+Text Label 750  1000 0    50   ~ 0
+ENA_100x
+Text Label 750  850  0    50   ~ 0
+ENA_1000x
+Text Label 750  1300 0    50   ~ 0
+CURRENT_OUT0
+Text Label 750  1150 0    50   ~ 0
+CURRENT_OUT1
+Text Notes 1550 1850 0    50   ~ 0
+DAC
+Wire Wire Line
+	750  1750 1400 1750
+Wire Wire Line
+	750  1900 1400 1900
+Wire Wire Line
+	750  1000 1400 1000
+Wire Wire Line
+	1400 850  750  850 
+Wire Wire Line
+	750  1150 1400 1150
+Wire Wire Line
+	1400 1300 750  1300
+Wire Wire Line
+	750  700  1400 700 
+Text Label 750  1900 0    50   ~ 0
+BIAS_MCU
 $EndSCHEMATC

@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-EELAYER 29 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -1145,9 +1145,9 @@ Wire Wire Line
 Connection ~ 8400 3250
 Wire Wire Line
 	8400 3250 8650 3250
-Text Label 9250 850  0    50   ~ 0
+Text Label 8850 850  0    50   ~ 0
 coil-
-Text Label 9250 1550 0    50   ~ 0
+Text Label 8850 1550 0    50   ~ 0
 coil+
 Text GLabel 9950 1550 2    50   Input ~ 0
 L_OUT
@@ -1155,18 +1155,14 @@ Text GLabel 9950 850  2    50   Input ~ 0
 L_IN
 Wire Wire Line
 	9900 1550 9950 1550
-Wire Wire Line
-	9250 1550 9500 1550
-Wire Wire Line
-	9250 850  9500 850 
 Wire Notes Line
-	9150 600  9150 1650
+	8750 600  8750 1650
 Wire Notes Line
-	11150 600  9150 600 
+	11150 600  8750 600 
 Wire Notes Line
 	11150 1650 11150 600 
 Wire Notes Line
-	9150 1650 11150 1650
+	8750 1650 11150 1650
 Wire Wire Line
 	9500 850  9500 900 
 Wire Wire Line
@@ -1292,4 +1288,56 @@ Wire Wire Line
 	750  700  1400 700 
 Text Label 750  1900 0    50   ~ 0
 BIAS_MCU
+$Comp
+L Connector:TestPoint TP5
+U 1 1 607FB14D
+P 9200 850
+F 0 "TP5" H 9250 1050 50  0000 R CNN
+F 1 "TestPoint" H 9142 967 50  0001 R CNN
+F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 9400 850 50  0001 C CNN
+F 3 "~" H 9400 850 50  0001 C CNN
+	1    9200 850 
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:TestPoint TP3
+U 1 1 60807F48
+P 9050 850
+F 0 "TP3" H 9100 1050 50  0000 R CNN
+F 1 "TestPoint" H 8992 967 50  0001 R CNN
+F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 9250 850 50  0001 C CNN
+F 3 "~" H 9250 850 50  0001 C CNN
+	1    9050 850 
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9200 850  9500 850 
+Wire Wire Line
+	9050 850  8850 850 
+$Comp
+L Connector:TestPoint TP6
+U 1 1 6081E7E2
+P 9200 1550
+F 0 "TP6" H 9250 1750 50  0000 R CNN
+F 1 "TestPoint" H 9142 1667 50  0001 R CNN
+F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 9400 1550 50  0001 C CNN
+F 3 "~" H 9400 1550 50  0001 C CNN
+	1    9200 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP4
+U 1 1 6081F0D0
+P 9050 1550
+F 0 "TP4" H 9100 1750 50  0000 R CNN
+F 1 "TestPoint" H 8992 1667 50  0001 R CNN
+F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 9250 1550 50  0001 C CNN
+F 3 "~" H 9250 1550 50  0001 C CNN
+	1    9050 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9200 1550 9500 1550
+Wire Wire Line
+	8850 1550 9050 1550
 $EndSCHEMATC

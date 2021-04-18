@@ -4,3 +4,8 @@
 .*.swp
 *.kicad_pcb-bak
 *.bck
+*.sch-bak
+.~*#
+_autosave-*
+energy-meter.csv
+energy-meter.xml

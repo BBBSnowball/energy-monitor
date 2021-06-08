@@ -1,0 +1,57 @@
+Isolierschlauch über die Kabel unter der Platine
+(oder Mantel drum lassen, wenn möglich)
+-> besser zwei Schläuche, damit es doppelte Isolierung ist ohne Kenntnis der Werte für das NYM
+https://www.tme.eu/de/katalog/elektro-isolationshullen_113546/
+
+Silikon o.ä. um das Kabel durch den Trafo gegen Lösen zu sichern
+-> https://electronics.stackexchange.com/a/18533
+-> Jetzt muss ich das nur noch irgendwo sinnvoll zu kaufen finden.
+
+Verschmutzungsgrad 2, <2km, <95% rho
+
+Luftstrecke: L/N zu sekundär, 3mm
+  -> für transiente Überspannung
+Norm 61010
+Kriechstrecke: auch 3mm
+das ist alles für verstärkte Isolierung ^^
+
+Isolierung durch Feststoff:
+  Innenlage: 0.4mm, weil Epoxy dazwischen ist
+  und auch zwischen verschiedenen Lagen: 0.4mm
+
+AP-2500: keine verstärkte Isolierung, d.h. das Kabel durchs Loch braucht auch mindestens eine einfache Isolierung - unklar, ob das Kabel reicht
+-> auch ein Isolierschlauch über das komplette Kabel
+
+Relais: Prüfspannung steht im Datenblatt, passt mit verstärkter Isolierung
+SSRs auch - auch wenn das Datenblatt fishy ist; aber Prüfnummer steht im Datenblatt, Prüfspannung 3750V ist >3kV
+
+
+1.5mm zwischen L/N/PE
+
+16A, 60°C -> Querschnitt etwa 275 mil^2
+1 oz -> 0.2'' Breite
+
+PE-Zapfen unter den Widerständen weg.
+1.5mm bei der Leitung zum Relais einhalten - sieht grad knapp aus.
+
+Schraubverbindung für PE: mindestens M4 und 1.2 Nm
+-> das ist hier nicht gegeben!
+-> PE per Wago verbinden und dann nur Abzweig auf die Platine. Von der Norm her unklar, aber geht in Unterputzdose auch.
+
+
+Transimpedanz-Verstärker:
+- Kapazität am invertierenden Eingang ist böse -> evtl C13 wegnehmen
+- Kapazität parallel zu R20/R21 kann helfen.
+  => Oh, ja, definitiv! C13=6p und 12p parallel zum Feedback macht den Frequenzgang viel besser.
+  => Dafür brauche ich dann wohl Anti-Alias Filter auf dem Weg zum GD32V an allen Abgriffen.
+
+
+PGOOD von LP2951 könnte man noch anschließen.
+
+
+Low-cost relais: Hongfa
+
+Falls ich rechts auf der Platine ein paar Pins vom GD32V wegoptimieren kann, könnte ich mehr Platz für das Kabel schaffen.
+
+Unsymmetrische Messlasten (z.B. Halbwellen-Gleichrichter) könnten den Stromwandler in die Sättigung treiben. Ich denke aber,
+mit U8 könnte ich den wieder "entladen".

@@ -1,5 +1,6 @@
 EESchema Schematic File Version 4
-EELAYER 30 0
+LIBS:energy-meter-cache
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -1340,4 +1341,10 @@ Wire Wire Line
 	9200 1550 9500 1550
 Wire Wire Line
 	8850 1550 9050 1550
+Text Notes -2300 4300 0    50   ~ 0
+FIXME:\n- make hole of TP1 and TP2 wider\n- remove net ties between TP1 and TP2\n- pullup for RELAY_SET/RESET because PB4 is also TRST\n- pull negative input of U12 to GND if not used to avoid\n  negative influence on previous amp\n  -> might not be necessary if U10 is soldered correctly...\n- second voltage divider for voltage with 10x gain\n- use the other I2C?\n- 220k is too much for first OpAmp -> use 10k\n- prototype uses 200R instead of 220R due to sourcing issues\n- add SMA output for CURRENT_OUT1 (and 0?) and voltage\n- RELAY_SET/RESET are swapped\n- connect CURRENT_OUT0 to pin without an LED\n- SHORT_INPUT is not useful: 500mVp-p noise, doesn't remove\n  all of the input signal\n  -> remove?\n- reference voltage for STM32: measure BIAS_MCU instead of Vrefint?
+Text Notes 4650 2500 0    50   ~ 0
+datasheet: 120 mA\nmeasured, steady state: 107 mA
+Text Notes 6750 4350 0    50   ~ 0
+datasheet: <330R\nmeasured: 203R (2pcs)
 $EndSCHEMATC

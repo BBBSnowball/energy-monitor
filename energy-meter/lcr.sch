@@ -1,5 +1,6 @@
 EESchema Schematic File Version 4
-EELAYER 30 0
+LIBS:energy-meter-cache
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -17,17 +18,6 @@ Text HLabel 1850 5850 0    50   Input ~ 0
 CURRENT1
 Text HLabel 1650 6450 0    50   Input ~ 0
 CURRENT0
-$Comp
-L Amplifier_Operational:MCP6L91T-EOT U2
-U 1 1 60E518DB
-P 2550 3600
-F 0 "U2" H 2550 3900 50  0000 L CNN
-F 1 "MCP6V96T-E/OT" H 2550 3800 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23-5" H 2450 3400 50  0001 L CNN
-F 3 "https://www.mouser.de/datasheet/2/268/MCP6V96_Family_Data_Sheet_DS20006467A-1948680.pdf" H 2550 3800 50  0001 C CNN
-	1    2550 3600
-	1    0    0    -1  
-$EndComp
 $Comp
 L Analog_Switch:TS5A3159ADBVR U3
 U 2 1 60F119FA
@@ -269,7 +259,6 @@ F 3 "~" H 3050 3600 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2900 3600 2850 3600
-Connection ~ 2850 3600
 Text Label 3200 3600 0    50   ~ 0
 BIAS
 $Comp
@@ -698,8 +687,6 @@ $EndComp
 Wire Wire Line
 	4350 3750 4350 3600
 Connection ~ 4350 3600
-Wire Wire Line
-	4350 3600 4750 3600
 Wire Wire Line
 	4350 4100 4350 4050
 Wire Wire Line
@@ -1270,4 +1257,18 @@ Wire Wire Line
 	6250 5000 6750 5000
 Wire Wire Line
 	6600 4950 6600 4900
+Connection ~ 2850 3600
+Wire Wire Line
+	4350 3600 4750 3600
+$Comp
+L Amplifier_Operational:MCP6L91T-EOT U2
+U 1 1 60E518DB
+P 2550 3600
+F 0 "U2" H 2550 3900 50  0000 L CNN
+F 1 "MCP6V96T-E/OT" H 2550 3800 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 2450 3400 50  0001 L CNN
+F 3 "https://www.mouser.de/datasheet/2/268/MCP6V96_Family_Data_Sheet_DS20006467A-1948680.pdf" H 2550 3800 50  0001 C CNN
+	1    2550 3600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

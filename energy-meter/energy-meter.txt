@@ -53,5 +53,10 @@ Low-cost relais: Hongfa
 
 Falls ich rechts auf der Platine ein paar Pins vom GD32V wegoptimieren kann, könnte ich mehr Platz für das Kabel schaffen.
 
-Unsymmetrische Messlasten (z.B. Halbwellen-Gleichrichter) könnten den Stromwandler in die Sättigung treiben. Ich denke aber,
-mit U8 könnte ich den wieder "entladen".
+
+
+Software:
+- SHORT_CURRENT is not so useful for offset correction: 500mVp-p noise, doesn't remove all of the input signal
+  -> If we assume balanced AC signal or disconnect the load, we can calibrate the offset without this.
+- Unsymmetrische Messlasten (z.B. Halbwellen-Gleichrichter) könnten den Stromwandler in die Sättigung treiben. Ich denke aber, mit U8 / SHORT_CURRENT könnte ich den wieder "entladen".
+- reference voltage for ADC: measure BIAS_MCU instead of Vrefint?

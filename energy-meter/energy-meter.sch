@@ -285,7 +285,7 @@ CURRENT1
 Wire Wire Line
 	7550 2850 7750 2850
 Text Notes 8300 2700 0    50   ~ 0
-6V AC -> 8.5V p-p\n-> divide by 1/6
+10.2V AC -> 14.4V p-p\n-> divide by 1/11\n(6V nominal but 10.2V for no load)
 $Comp
 L Device:R R?
 U 1 1 60A38A5B
@@ -389,7 +389,7 @@ AR Path="/60514CC5/60A41CC6" Ref="R?"  Part="1"
 AR Path="/607B74C2/60A41CC6" Ref="R?"  Part="1" 
 AR Path="/60A41CC6" Ref="R1"  Part="1" 
 F 0 "R1" V 7693 2850 50  0000 C CNN
-F 1 "5k, 0.1%" V 7784 2850 50  0000 C CNN
+F 1 "10k, 0.1%" V 7784 2850 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 7830 2850 50  0001 C CNN
 F 3 "~" H 7900 2850 50  0001 C CNN
 	1    7900 2850
@@ -447,21 +447,6 @@ Wire Wire Line
 	950  2700 1400 2700
 Wire Wire Line
 	1400 2550 950  2550
-$Sheet
-S 3500 5300 1100 2250
-U 607B74C2
-F0 "Modified LCR Meter" 50
-F1 "lcr.sch" 50
-F2 "CURRENT1" I R 4600 5500 50 
-F3 "CURRENT0" I R 4600 5400 50 
-F4 "BIAS_MCU" I R 4600 5650 50 
-F5 "TUNE_OFFSET0" I R 4600 5750 50 
-F6 "CURRENT_OUT0" I R 4600 5850 50 
-F7 "ENA_1000x" I R 4600 6300 50 
-F8 "SHORT_CURRENT" I R 4600 6100 50 
-F9 "CURRENT_OUT1" I R 4600 5950 50 
-F10 "ENA_100x" I R 4600 6200 50 
-$EndSheet
 $Comp
 L energy-meter:L9110S U1
 U 1 1 60B7564C
@@ -1069,17 +1054,6 @@ Wire Wire Line
 Wire Wire Line
 	3000 2600 3000 2550
 Connection ~ 3050 2600
-$Comp
-L power:GND #PWR0140
-U 1 1 60E3FBEF
-P 3050 2650
-F 0 "#PWR0140" H 3050 2400 50  0001 C CNN
-F 1 "GND" V 3055 2522 50  0000 R CNN
-F 2 "" H 3050 2650 50  0001 C CNN
-F 3 "" H 3050 2650 50  0001 C CNN
-	1    3050 2650
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	7250 3550 7950 3550
 Wire Wire Line
@@ -1225,10 +1199,6 @@ Text Label 750  1000 0    50   ~ 0
 ENA_100x
 Text Label 750  850  0    50   ~ 0
 ENA_1000x
-Text Label 750  1300 0    50   ~ 0
-CURRENT_OUT0
-Text Label 750  1150 0    50   ~ 0
-CURRENT_OUT1
 Text Notes 1550 1850 0    50   ~ 0
 DAC
 Wire Wire Line
@@ -1241,14 +1211,8 @@ Wire Wire Line
 	1400 850  750  850 
 Wire Wire Line
 	750  1150 1400 1150
-Wire Wire Line
-	1400 1300 750  1300
-Wire Wire Line
-	750  700  1400 700 
 Text Label 750  1900 0    50   ~ 0
 BIAS_MCU
-Text Notes -2300 4300 0    50   ~ 0
-FIXME:\n- pullup for RELAY_SET/RESET because PB4 is also TRST\n- pull negative input of U12 to GND if not used to avoid\n  negative influence on previous amp\n  -> might not be necessary if U10 is soldered correctly...\n- second voltage divider for voltage with 10x gain\n- use the other I2C?\n- 220k is too much for first OpAmp -> use 10k\n- prototype uses 200R instead of 220R due to sourcing issues\n- add SMA output for CURRENT_OUT1 (and 0?) and voltage\n- connect CURRENT_OUT0 to pin without an LED\n- SHORT_INPUT is not useful: 500mVp-p noise, doesn't remove\n  all of the input signal\n  -> remove?\n- reference voltage for STM32: measure BIAS_MCU instead of Vrefint?
 Text Notes 4650 2500 0    50   ~ 0
 datasheet: 120 mA\nmeasured, steady state: 107 mA
 Text Notes 6750 4350 0    50   ~ 0
@@ -1261,4 +1225,172 @@ F1 "caution.sch" 50
 $EndSheet
 Text Notes 5700 5800 0    118  ~ 0
 Mains voltage is dangerous!\nRead this first!
+$Comp
+L power:+3V3 #PWR?
+U 1 1 60CDFE99
+P 3050 2650
+AR Path="/607B74C2/60CDFE99" Ref="#PWR?"  Part="1" 
+AR Path="/60CDFE99" Ref="#PWR0139"  Part="1" 
+F 0 "#PWR0139" H 3050 2500 50  0001 C CNN
+F 1 "+3V3" V 3065 2778 50  0000 L CNN
+F 2 "" H 3050 2650 50  0001 C CNN
+F 3 "" H 3050 2650 50  0001 C CNN
+	1    3050 2650
+	-1   0    0    1   
+$EndComp
+Text Label 9600 1750 0    50   ~ 0
+6VAC
+$Comp
+L Device:R R?
+U 1 1 60CE4DEC
+P 9600 1900
+AR Path="/602A3FC4/60CE4DEC" Ref="R?"  Part="1" 
+AR Path="/60514CC5/60CE4DEC" Ref="R?"  Part="1" 
+AR Path="/607B74C2/60CE4DEC" Ref="R?"  Part="1" 
+AR Path="/60CE4DEC" Ref="R8"  Part="1" 
+F 0 "R8" V 9393 1900 50  0000 C CNN
+F 1 "10k, 0.1%" V 9484 1900 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 9530 1900 50  0001 C CNN
+F 3 "~" H 9600 1900 50  0001 C CNN
+	1    9600 1900
+	1    0    0    -1  
+$EndComp
+Text Label 10050 2100 2    50   ~ 0
+VOLTAGE1
+Wire Wire Line
+	9600 2100 9600 2050
+$Comp
+L Device:C C?
+U 1 1 60CF2866
+P 9600 2300
+AR Path="/602A2F7F/60CF2866" Ref="C?"  Part="1" 
+AR Path="/602A3FC4/60CF2866" Ref="C?"  Part="1" 
+AR Path="/60514CC5/60CF2866" Ref="C?"  Part="1" 
+AR Path="/607B74C2/60CF2866" Ref="C?"  Part="1" 
+AR Path="/60CF2866" Ref="C20"  Part="1" 
+F 0 "C20" H 9715 2346 50  0000 L CNN
+F 1 "10n" H 9715 2255 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 9638 2150 50  0001 C CNN
+F 3 "~" H 9600 2300 50  0001 C CNN
+	1    9600 2300
+	1    0    0    -1  
+$EndComp
+Text Label 10100 2550 2    50   ~ 0
+VOLTAGE1B
+Wire Wire Line
+	10100 2550 9600 2550
+Wire Wire Line
+	9600 2450 9600 2550
+Text Notes 9800 1950 0    50   ~ 0
+don't divide\n-> more resolution but will clip
+$Comp
+L Device:D_Zener D7
+U 1 1 60D0D2E8
+P 10200 2300
+F 0 "D7" V 10154 2379 50  0000 L CNN
+F 1 "ESD5Z5.0T1G" V 10245 2379 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-523" H 10200 2300 50  0001 C CNN
+F 3 "https://www.onsemi.com/pub/Collateral/ESD5Z2.5T1-D.PDF" H 10200 2300 50  0001 C CNN
+	1    10200 2300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9600 2150 9600 2100
+Connection ~ 9600 2100
+Wire Wire Line
+	9600 2100 10200 2100
+Wire Wire Line
+	10200 2150 10200 2100
+$Comp
+L power:GND #PWR0140
+U 1 1 60D21205
+P 10200 2450
+F 0 "#PWR0140" H 10200 2200 50  0001 C CNN
+F 1 "GND" V 10205 2322 50  0000 R CNN
+F 2 "" H 10200 2450 50  0001 C CNN
+F 3 "" H 10200 2450 50  0001 C CNN
+	1    10200 2450
+	1    0    0    -1  
+$EndComp
+Text Label 950  2200 0    50   ~ 0
+VOLTAGE1
+Wire Wire Line
+	950  2200 1400 2200
+$Sheet
+S 3500 5300 1100 2250
+U 607B74C2
+F0 "Modified LCR Meter" 50
+F1 "lcr.sch" 50
+F2 "CURRENT1" I R 4600 5500 50 
+F3 "CURRENT0" I R 4600 5400 50 
+F4 "BIAS_MCU" I R 4600 5650 50 
+F5 "TUNE_OFFSET0" I R 4600 5750 50 
+F6 "CURRENT_OUT0" I R 4600 5850 50 
+F7 "ENA_1000x" I R 4600 6300 50 
+F8 "SHORT_CURRENT" I R 4600 6100 50 
+F9 "CURRENT_OUT1" I R 4600 5950 50 
+F10 "ENA_100x" I R 4600 6200 50 
+F11 "PGOOD" I R 4600 6400 50 
+$EndSheet
+Wire Wire Line
+	4600 6400 5250 6400
+Text Label 5250 6400 2    50   ~ 0
+PGOOD
+Text Label 650  3600 0    50   ~ 0
+PGOOD
+$Comp
+L Jumper:SolderJumper_2_Open JP13
+U 1 1 60D7134F
+P 1150 3600
+F 0 "JP13" H 1150 3467 50  0000 C CNN
+F 1 "SolderJumper_2_Open" H 1150 3714 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 1150 3600 50  0001 C CNN
+F 3 "~" H 1150 3600 50  0001 C CNN
+	1    1150 3600
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	1400 3600 1300 3600
+Wire Wire Line
+	1000 3600 650  3600
+Text Label 550  5500 3    50   ~ 0
+SCL
+Text Label 550  6100 1    50   ~ 0
+SDA
+$Comp
+L Jumper:SolderJumper_2_Open JP9
+U 1 1 60D93356
+P 700 5700
+F 0 "JP9" H 700 5567 50  0000 C CNN
+F 1 "SolderJumper_2_Open" H 700 5814 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 700 5700 50  0001 C CNN
+F 3 "~" H 700 5700 50  0001 C CNN
+	1    700  5700
+	1    0    0    1   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Open JP10
+U 1 1 60D938A6
+P 700 5850
+F 0 "JP10" H 700 5950 50  0000 C CNN
+F 1 "SolderJumper_2_Open" H 700 5964 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 700 5850 50  0001 C CNN
+F 3 "~" H 700 5850 50  0001 C CNN
+	1    700  5850
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	550  6100 550  5850
+Wire Wire Line
+	550  5500 550  5700
+Text Label 750  2050 0    50   ~ 0
+CURRENT_OUT1
+Text Label 750  1150 0    50   ~ 0
+CURRENT_OUT0
+Wire Wire Line
+	750  700  1400 700 
+Text Notes -4700 4700 0    50   ~ 0
+FIXME:\n- add SMA output for CURRENT_OUT1 (and 0?) and voltage\n- Falls ich rechts auf der Platine ein paar Pins vom GD32V wegoptimieren kann, könnte ich mehr Platz für das Kabel schaffen.\n  -> Yes but needs lots of re-routing. TODO: make cutout bigger
+Wire Wire Line
+	750  2050 1400 2050
 $EndSCHEMATC

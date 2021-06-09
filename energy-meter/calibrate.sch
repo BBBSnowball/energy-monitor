@@ -314,4 +314,46 @@ Wire Wire Line
 	1150 3050 1400 3050
 Text HLabel 1150 3250 0    50   Input ~ 0
 ENA_470k
+Wire Wire Line
+	3150 950  3100 950 
+Wire Wire Line
+	3100 800  3150 800 
+Wire Wire Line
+	2800 950  2750 950 
+Wire Wire Line
+	2750 800  2800 800 
+Text GLabel 2750 800  0    50   Input ~ 0
+L_OUT
+Text GLabel 3150 800  2    50   Input ~ 0
+L_OUT2
+$Comp
+L Connector:TestPoint TP?
+U 1 1 61044136
+P 3150 950
+AR Path="/61044136" Ref="TP?"  Part="1" 
+AR Path="/60F98E6C/61044136" Ref="TP2"  Part="1" 
+F 0 "TP2" H 3200 1200 50  0000 R CNN
+F 1 "TestPoint" H 3208 977 50  0001 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D4.0mm_Drill2.0mm" H 3350 950 50  0001 C CNN
+F 3 "~" H 3350 950 50  0001 C CNN
+	1    3150 950 
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP?
+U 1 1 61044130
+P 2750 950
+AR Path="/61044130" Ref="TP?"  Part="1" 
+AR Path="/60F98E6C/61044130" Ref="TP1"  Part="1" 
+F 0 "TP1" H 2800 1200 50  0000 R CNN
+F 1 "TestPoint" H 2808 977 50  0001 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D4.0mm_Drill2.0mm" H 2950 950 50  0001 C CNN
+F 3 "~" H 2950 950 50  0001 C CNN
+	1    2750 950 
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2800 800  2800 950 
+Wire Wire Line
+	3100 800  3100 950 
 $EndSCHEMATC

@@ -661,13 +661,13 @@ Wire Wire Line
 	3150 2000 3100 2000
 Wire Wire Line
 	3150 2200 3000 2200
-Text Label 2600 2000 0    50   ~ 0
-RELAY_RESET
 Text Label 2600 2200 0    50   ~ 0
-RELAY_SET
-Text Label 850  5550 0    50   ~ 0
 RELAY_RESET
+Text Label 2600 2000 0    50   ~ 0
+RELAY_SET
 Text Label 850  5400 0    50   ~ 0
+RELAY_RESET
+Text Label 850  5550 0    50   ~ 0
 RELAY_SET
 Wire Wire Line
 	850  5550 1400 5550
@@ -1248,7 +1248,7 @@ Wire Wire Line
 Text Label 750  1900 0    50   ~ 0
 BIAS_MCU
 Text Notes -2300 4300 0    50   ~ 0
-FIXME:\n- make hole of TP1 and TP2 wider\n- remove net ties between TP1 and TP2\n- pullup for RELAY_SET/RESET because PB4 is also TRST\n- pull negative input of U12 to GND if not used to avoid\n  negative influence on previous amp\n  -> might not be necessary if U10 is soldered correctly...\n- second voltage divider for voltage with 10x gain\n- use the other I2C?\n- 220k is too much for first OpAmp -> use 10k\n- prototype uses 200R instead of 220R due to sourcing issues\n- add SMA output for CURRENT_OUT1 (and 0?) and voltage\n- RELAY_SET/RESET are swapped\n- connect CURRENT_OUT0 to pin without an LED\n- SHORT_INPUT is not useful: 500mVp-p noise, doesn't remove\n  all of the input signal\n  -> remove?\n- reference voltage for STM32: measure BIAS_MCU instead of Vrefint?
+FIXME:\n- pullup for RELAY_SET/RESET because PB4 is also TRST\n- pull negative input of U12 to GND if not used to avoid\n  negative influence on previous amp\n  -> might not be necessary if U10 is soldered correctly...\n- second voltage divider for voltage with 10x gain\n- use the other I2C?\n- 220k is too much for first OpAmp -> use 10k\n- prototype uses 200R instead of 220R due to sourcing issues\n- add SMA output for CURRENT_OUT1 (and 0?) and voltage\n- connect CURRENT_OUT0 to pin without an LED\n- SHORT_INPUT is not useful: 500mVp-p noise, doesn't remove\n  all of the input signal\n  -> remove?\n- reference voltage for STM32: measure BIAS_MCU instead of Vrefint?
 Text Notes 4650 2500 0    50   ~ 0
 datasheet: 120 mA\nmeasured, steady state: 107 mA
 Text Notes 6750 4350 0    50   ~ 0

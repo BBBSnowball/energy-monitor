@@ -1255,8 +1255,8 @@ F 3 "~" H 9600 1900 50  0001 C CNN
 	1    9600 1900
 	1    0    0    -1  
 $EndComp
-Text Label 10050 2100 2    50   ~ 0
-VOLTAGE1
+Text Label 10200 2100 2    50   ~ 0
+VOLTAGE1MCU
 Wire Wire Line
 	9600 2100 9600 2050
 $Comp
@@ -1312,10 +1312,10 @@ F 3 "" H 10200 2450 50  0001 C CNN
 	1    10200 2450
 	1    0    0    -1  
 $EndComp
-Text Label 950  2200 0    50   ~ 0
-VOLTAGE1
+Text Label 750  2200 0    50   ~ 0
+VOLTAGE1MCU
 Wire Wire Line
-	950  2200 1400 2200
+	750  2200 1400 2200
 $Sheet
 S 3500 5300 1100 2250
 U 607B74C2

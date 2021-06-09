@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 3
+Sheet 1 4
 Title ""
 Date ""
 Rev ""
@@ -1347,4 +1347,12 @@ Text Notes 4650 2500 0    50   ~ 0
 datasheet: 120 mA\nmeasured, steady state: 107 mA
 Text Notes 6750 4350 0    50   ~ 0
 datasheet: <330R\nmeasured: 203R (2pcs)
+$Sheet
+S 5550 4850 2800 1500
+U 60C0852B
+F0 "Caution!" 50
+F1 "caution.sch" 50
+$EndSheet
+Text Notes 5700 5800 0    118  ~ 0
+Mains voltage is dangerous!\nRead this first!
 $EndSCHEMATC

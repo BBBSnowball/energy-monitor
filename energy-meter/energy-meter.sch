@@ -1146,48 +1146,6 @@ Wire Wire Line
 Connection ~ 8400 3250
 Wire Wire Line
 	8400 3250 8650 3250
-Text Label 8850 850  0    50   ~ 0
-coil-
-Text Label 8850 1550 0    50   ~ 0
-coil+
-Text GLabel 9950 1550 2    50   Input ~ 0
-L_OUT
-Text GLabel 9950 850  2    50   Input ~ 0
-L_IN
-Wire Wire Line
-	9900 1550 9950 1550
-Wire Notes Line
-	8750 600  8750 1650
-Wire Notes Line
-	11150 600  8750 600 
-Wire Notes Line
-	11150 1650 11150 600 
-Wire Notes Line
-	8750 1650 11150 1650
-Wire Wire Line
-	9500 850  9500 900 
-Wire Wire Line
-	9500 1550 9500 1500
-Text Notes 10200 1400 0    50   ~ 0
-alternative relay:\ncheap but not bistable
-Wire Wire Line
-	9900 1550 9900 1500
-Wire Wire Line
-	9900 850  9900 900 
-Wire Wire Line
-	9950 850  9900 850 
-$Comp
-L Relay:DIPxx-1Axx-11x K2
-U 1 1 60CDDACF
-P 9700 1200
-F 0 "K2" H 10050 1350 50  0000 L CNN
-F 1 "DNP / HF3FF/005-1HST" H 10050 1250 50  0000 L CNN
-F 2 "energy-meter:Relay_HF3FF_005" H 10050 1150 50  0001 L CNN
-F 3 "https://standexelectronics.com/wp-content/uploads/datasheet_reed_relay_DIP.pdf" H 9700 1200 50  0001 C CNN
-F 4 "https://www.tme.eu/de/details/hf3ff_005-1hst/elektromagnetische-mini-relais/hongfa-relay/" H 9700 1200 50  0001 C CNN "TME"
-	1    9700 1200
-	1    0    0    -1  
-$EndComp
 $Sheet
 S 6800 650  700  1200
 U 60F98E6C
@@ -1289,58 +1247,6 @@ Wire Wire Line
 	750  700  1400 700 
 Text Label 750  1900 0    50   ~ 0
 BIAS_MCU
-$Comp
-L Connector:TestPoint TP5
-U 1 1 607FB14D
-P 9200 850
-F 0 "TP5" H 9250 1050 50  0000 R CNN
-F 1 "TestPoint" H 9142 967 50  0001 R CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 9400 850 50  0001 C CNN
-F 3 "~" H 9400 850 50  0001 C CNN
-	1    9200 850 
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP3
-U 1 1 60807F48
-P 9050 850
-F 0 "TP3" H 9100 1050 50  0000 R CNN
-F 1 "TestPoint" H 8992 967 50  0001 R CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 9250 850 50  0001 C CNN
-F 3 "~" H 9250 850 50  0001 C CNN
-	1    9050 850 
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	9200 850  9500 850 
-Wire Wire Line
-	9050 850  8850 850 
-$Comp
-L Connector:TestPoint TP6
-U 1 1 6081E7E2
-P 9200 1550
-F 0 "TP6" H 9250 1750 50  0000 R CNN
-F 1 "TestPoint" H 9142 1667 50  0001 R CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 9400 1550 50  0001 C CNN
-F 3 "~" H 9400 1550 50  0001 C CNN
-	1    9200 1550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP4
-U 1 1 6081F0D0
-P 9050 1550
-F 0 "TP4" H 9100 1750 50  0000 R CNN
-F 1 "TestPoint" H 8992 1667 50  0001 R CNN
-F 2 "TestPoint:TestPoint_THTPad_1.0x1.0mm_Drill0.5mm" H 9250 1550 50  0001 C CNN
-F 3 "~" H 9250 1550 50  0001 C CNN
-	1    9050 1550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9200 1550 9500 1550
-Wire Wire Line
-	8850 1550 9050 1550
 Text Notes -2300 4300 0    50   ~ 0
 FIXME:\n- make hole of TP1 and TP2 wider\n- remove net ties between TP1 and TP2\n- pullup for RELAY_SET/RESET because PB4 is also TRST\n- pull negative input of U12 to GND if not used to avoid\n  negative influence on previous amp\n  -> might not be necessary if U10 is soldered correctly...\n- second voltage divider for voltage with 10x gain\n- use the other I2C?\n- 220k is too much for first OpAmp -> use 10k\n- prototype uses 200R instead of 220R due to sourcing issues\n- add SMA output for CURRENT_OUT1 (and 0?) and voltage\n- RELAY_SET/RESET are swapped\n- connect CURRENT_OUT0 to pin without an LED\n- SHORT_INPUT is not useful: 500mVp-p noise, doesn't remove\n  all of the input signal\n  -> remove?\n- reference voltage for STM32: measure BIAS_MCU instead of Vrefint?
 Text Notes 4650 2500 0    50   ~ 0

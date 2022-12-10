@@ -1399,4 +1399,43 @@ Wire Wire Line
 	2350 1750 2400 1750
 Text Notes 7450 2750 0    50   ~ 0
 340 kHz
+$Comp
+L Connector:Conn_Coaxial J5
+U 1 1 60E3584F
+P 8650 1900
+F 0 "J5" H 8750 1875 50  0000 L CNN
+F 1 "SMA" H 8750 1784 50  0000 L CNN
+F 2 "Connector_Coaxial:SMA_Samtec_SMA-J-P-H-ST-EM1_EdgeMount" H 8650 1900 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/2004161132_BAT-WIRELESS-BWSMA-KE-P001_C496550.pdf" H 8650 1900 50  0001 C CNN
+F 4 "C496550, C530661, (C1509221)" H 8650 1900 50  0001 C CNN "LCSC"
+	1    8650 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_Coaxial J6
+U 1 1 60E3F131
+P 8650 2400
+F 0 "J6" H 8750 2282 50  0000 L CNN
+F 1 "SMA" H 8750 2373 50  0000 L CNN
+F 2 "Connector_Coaxial:SMA_Samtec_SMA-J-P-H-ST-EM1_EdgeMount" H 8650 2400 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/2004161132_BAT-WIRELESS-BWSMA-KE-P001_C496550.pdf" H 8650 2400 50  0001 C CNN
+F 4 "C496550, C530661, (C1509221)" H 8650 2400 50  0001 C CNN "LCSC"
+	1    8650 2400
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	8650 2200 8650 2150
+Wire Wire Line
+	8650 2150 8850 2150
+Connection ~ 8650 2150
+Wire Wire Line
+	8650 2150 8650 2100
+Text HLabel 8450 1900 0    50   Input ~ 0
+CURRENT_OUT0
+Text HLabel 8450 2400 0    50   Input ~ 0
+CURRENT_OUT1
+Text Label 8850 2150 0    50   ~ 0
+BIAS
+Text Notes 8200 3200 0    50   ~ 0
+NOTE: SMA outer connector will be connected to the\noscilloscope's ground. Either the osci or the energy meter\nmust have a floating power supply.\n\nThe SMA for voltage is using a resistor divider (R3 and R4)\nwhich will be overridden by our BIAS (which is driven by\nan OpAmp). We usually don't do this because it may\nincrease noise.
 $EndSCHEMATC

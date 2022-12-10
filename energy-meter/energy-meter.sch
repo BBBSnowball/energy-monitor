@@ -802,7 +802,7 @@ F 3 "" H 10350 5400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 8550 6400 0    50   ~ 0
-not recommended:\n- Measurement will be a lot worse\n  if the transformer has load.\n- The transformer is a bit small for\n  PineNut with WiFi or the relay and\n  certainly not both.\n-> Supply external 5V via USB if possible.\n\nIf not, place these parts and connect an\nexternal DC/DC board to J2. Keep in mind\nthat +6V is actually more like 8.5V.\n\nChange JP1..3 for supply voltage of the\nrelay and replace the relay with one that\nhas that coil voltage.\n\nChange divider:\n- R2=3k\n- connect VOLTAGE2B to GND instead of\n  VOLTAGE1 and BIAS
+not recommended:\n- Measurement will be a lot worse\n  if the transformer has load.\n- The transformer is a bit small for\n  PineNut with WiFi or the relay and\n  certainly not both.\n-> Supply external 5V via USB if possible.\n\nIf not, place these parts and connect an\nexternal DC/DC board to J2. Keep in mind\nthat +6V is actually more like 14.4Vp-p.\n\nChange JP1..3 for supply voltage of the\nrelay and replace the relay with one that\nhas that coil voltage.\n\nChange divider:\n- R2=??\n- connect VOLTAGE1B to GND instead of\n  VOLTAGE1 and BIAS
 $Comp
 L Connector_Generic:Conn_01x03 J2
 U 1 1 60BFC0B3
@@ -854,7 +854,7 @@ L Device:C C5
 U 1 1 60BFF14C
 P 10800 5500
 F 0 "C5" H 10915 5546 50  0000 L CNN
-F 1 "10u" H 10915 5455 50  0000 L CNN
+F 1 "DNP / 10u" H 10650 5400 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 10838 5350 50  0001 C CNN
 F 3 "~" H 10800 5500 50  0001 C CNN
 F 4 "CL21A106KOQNNNE" H 10800 5500 50  0001 C CNN "LCSC"
@@ -1390,7 +1390,127 @@ CURRENT_OUT0
 Wire Wire Line
 	750  700  1400 700 
 Text Notes -4700 4700 0    50   ~ 0
-FIXME:\n- add SMA output for CURRENT_OUT1 (and 0?) and voltage\n- Falls ich rechts auf der Platine ein paar Pins vom GD32V wegoptimieren kann, könnte ich mehr Platz für das Kabel schaffen.\n  -> Yes but needs lots of re-routing. TODO: make cutout bigger
+FIXME:\n- add SMA output for CURRENT_OUT1 (and 0?) and voltage\n- Falls ich rechts auf der Platine ein paar Pins vom GD32V wegoptimieren kann, könnte ich mehr Platz für das Kabel schaffen.\n  -> Yes but needs lots of re-routing. TODO: make cutout bigger\n- Use current bias for voltage as well? Should be ok-ish and we save one analog input.\n  I would keep R3 and C2 and connect R3 to the bias. Maybe move R3 next to the source and connect filtered bias to voltage and MCU.
 Wire Wire Line
 	750  2050 1400 2050
+Text Notes -4500 5150 0    50   ~ 0
+FIXME:\n2,3mm zwischen L und N, 5mm zwischen L/N und Schutzkleinspannung\n3 und 6mm wäre besser (CAT-III)
+$Comp
+L Connector:Conn_Coaxial J?
+U 1 1 60E51649
+P 9950 3800
+AR Path="/607B74C2/60E51649" Ref="J?"  Part="1" 
+AR Path="/60E51649" Ref="J4"  Part="1" 
+F 0 "J4" H 10050 3775 50  0000 L CNN
+F 1 "SMA" H 10050 3684 50  0000 L CNN
+F 2 "Connector_Coaxial:SMA_Samtec_SMA-J-P-H-ST-EM1_EdgeMount" H 9950 3800 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/2004161132_BAT-WIRELESS-BWSMA-KE-P001_C496550.pdf" H 9950 3800 50  0001 C CNN
+F 4 "C496550, C530661, (C1509221)" H 9950 3800 50  0001 C CNN "LCSC"
+	1    9950 3800
+	1    0    0    -1  
+$EndComp
+Text Label 9200 3800 0    50   ~ 0
+VOLTAGE1MCU
+Wire Wire Line
+	9200 3800 9750 3800
+Text Label 9200 4000 0    50   ~ 0
+BIAS
+Wire Wire Line
+	9200 4000 9950 4000
+$Comp
+L power:VDDA #PWR?
+U 1 1 60E7CDDE
+P 9550 6150
+AR Path="/607B74C2/60E7CDDE" Ref="#PWR?"  Part="1" 
+AR Path="/60E7CDDE" Ref="#PWR0172"  Part="1" 
+F 0 "#PWR0172" H 9550 6000 50  0001 C CNN
+F 1 "VDDA" H 9567 6323 50  0000 C CNN
+F 2 "" H 9550 6150 50  0001 C CNN
+F 3 "" H 9550 6150 50  0001 C CNN
+	1    9550 6150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Open JP14
+U 1 1 60E83CF4
+P 9700 6150
+F 0 "JP14" H 9700 6017 50  0000 C CNN
+F 1 "SolderJumper_2_Open" H 9700 6264 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 9700 6150 50  0001 C CNN
+F 3 "~" H 9700 6150 50  0001 C CNN
+	1    9700 6150
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 60E84321
+P 10150 6150
+AR Path="/607B74C2/60E84321" Ref="#PWR?"  Part="1" 
+AR Path="/60E84321" Ref="#PWR0173"  Part="1" 
+F 0 "#PWR0173" H 10150 6000 50  0001 C CNN
+F 1 "+3V3" H 10050 6300 50  0000 L CNN
+F 2 "" H 10150 6150 50  0001 C CNN
+F 3 "" H 10150 6150 50  0001 C CNN
+	1    10150 6150
+	0    1    1    0   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Open JP15
+U 1 1 60EA035D
+P 10000 6150
+F 0 "JP15" H 10000 6017 50  0000 C CNN
+F 1 "SolderJumper_2_Open" H 10000 6264 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 10000 6150 50  0001 C CNN
+F 3 "~" H 10000 6150 50  0001 C CNN
+	1    10000 6150
+	-1   0    0    1   
+$EndComp
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 60EAAE48
+P 5450 6900
+F 0 "H1" H 5550 6900 50  0000 L CNN
+F 1 "MountingHole_3.2mm_M3" H 5550 6855 50  0001 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 5450 6900 50  0001 C CNN
+F 3 "~" H 5450 6900 50  0001 C CNN
+F 4 "C63426, C357575, C357368, C357589" H 5450 6900 50  0001 C CNN "LCSC"
+	1    5450 6900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 60EAC318
+P 5450 7100
+F 0 "H2" H 5550 7100 50  0000 L CNN
+F 1 "MountingHole_3.2mm_M3" H 5550 7055 50  0001 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 5450 7100 50  0001 C CNN
+F 3 "~" H 5450 7100 50  0001 C CNN
+F 4 "C63426, C357575, C357368, C357589" H 5450 7100 50  0001 C CNN "LCSC"
+	1    5450 7100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 60EAC559
+P 5450 7300
+F 0 "H3" H 5550 7300 50  0000 L CNN
+F 1 "MountingHole_3.2mm_M3" H 5550 7255 50  0001 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 5450 7300 50  0001 C CNN
+F 3 "~" H 5450 7300 50  0001 C CNN
+F 4 "C63426, C357575, C357368, C357589" H 5450 7300 50  0001 C CNN "LCSC"
+	1    5450 7300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H4
+U 1 1 60EAC7E8
+P 5450 7500
+F 0 "H4" H 5550 7500 50  0000 L CNN
+F 1 "MountingHole_3.2mm_M3" H 5550 7455 50  0001 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 5450 7500 50  0001 C CNN
+F 3 "~" H 5450 7500 50  0001 C CNN
+F 4 "C63426, C357575, C357368, C357589" H 5450 7500 50  0001 C CNN "LCSC"
+	1    5450 7500
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
